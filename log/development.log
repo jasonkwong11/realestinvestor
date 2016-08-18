@@ -10930,3 +10930,2098 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 86ms (Views: 79.2ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/posts" for ::1 at 2016-08-18 16:22:08 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (4.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 73ms (Views: 64.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/edit" for ::1 at 2016-08-18 16:22:10 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/edit.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/edit.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 70ms (Views: 66.8ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnsToUsers (20160818203319)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160818203319"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_impressions_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_impressions_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='controlleraction_session_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='controlleraction_session_index' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='controlleraction_ip_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='controlleraction_ip_index' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='controlleraction_request_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='controlleraction_request_index' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='poly_session_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='poly_session_index' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='poly_ip_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='poly_ip_index' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='poly_request_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='poly_request_index' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='impressionable_type_message_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='impressionable_type_message_index' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/posts" for ::1 at 2016-08-18 17:03:19 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (4.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 397ms (Views: 334.6ms | ActiveRecord: 4.0ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-08-18 17:03:22 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ne8uPlhNiwRH3veCXx2YQ5q8xeciArQelubnl0peVbXloWaKQftxqItW+L/3H7oH1tsPkuohY1iVZoWiGkPx9w=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 30ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 17:03:22 -0400
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:03:22 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.5ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 68ms (Views: 63.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-08-18 17:03:25 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 92ms (Views: 90.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:03:27 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (5.1ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 82ms (Views: 80.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 17:03:34 -0400
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:03:34 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 53ms (Views: 51.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 17:03:41 -0400
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:03:41 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 78ms (Views: 76.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-08-18 17:03:45 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (4.0ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application (35.5ms)
+Completed 200 OK in 94ms (Views: 92.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-08-18 17:03:48 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8WaGph47/LeKkzH1/NQGP69L9dutWn3NY3qPZPG/Zr6J+rPxgLnqBJSbDGSn0/sKrWZ/KcCEz0pWHlNXBUx8Pg==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 79ms (Views: 55.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-08-18 17:04:52 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.8ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 54ms (Views: 53.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-08-18 17:05:46 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 58ms (Views: 55.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-08-18 17:05:56 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 53ms (Views: 51.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:06:51 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.9ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 74ms (Views: 72.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-08-18 17:06:53 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 90ms (Views: 87.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 17:06:56 -0400
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:06:56 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 48ms (Views: 46.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-08-18 17:07:04 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pQZrNkjC6o7qO5UAU4Jy3h5piMfPNuV6Z8pwtYDu7ojplaXSWeA1YQs0R3oO9lhuCtlmp+xCSwovXUi9SOIhvA==", "user"=>{"email"=>"asdfa@dd.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "asdfa@dd.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2016-08-18 21:07:05 UTC], ["last_sign_in_at", 2016-08-18 06:59:15 UTC], ["sign_in_count", 6], ["id", 2]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 208ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 17:07:05 -0400
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.1ms)
+  Rendered welcome/home.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 37ms (Views: 32.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 17:07:08 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (2.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 49ms (Views: 40.3ms | ActiveRecord: 3.7ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-08-18 17:07:30 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4x7sr/pigoZRJDPu/uEJmwNZKiflYjTMy4RLiEGBHjihdTnLKz1RcxkSSMecjxTytav7OQZAmPiIjF+JBxP43Q=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 17:07:30 -0400
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:07:30 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.3ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 49ms (Views: 46.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 17:08:05 -0400
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:08:05 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:08:11 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.7ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 56ms (Views: 54.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 17:08:17 -0400
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:08:17 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 46ms (Views: 45.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 17:08:20 -0400
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:08:20 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.9ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 44ms (Views: 42.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 17:08:22 -0400
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:08:23 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 46ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 17:09:02 -0400
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:09:03 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 59ms (Views: 40.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 17:09:08 -0400
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:09:08 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.1ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 49ms (Views: 46.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:09:13 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.3ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 49ms (Views: 47.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 17:09:19 -0400
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:09:19 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.8ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 46ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:10:19 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 51ms (Views: 49.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:10:23 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.3ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 47ms (Views: 46.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:11:59 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 63ms (Views: 46.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:12:01 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 46ms (Views: 44.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 17:12:05 -0400
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:12:05 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.8ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 49ms (Views: 47.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:12:31 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.1ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 67ms (Views: 49.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:12:39 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 56ms (Views: 39.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:12:48 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.7ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 68ms (Views: 40.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:13:14 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 60ms (Views: 41.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-08-18 17:13:16 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.7ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 68ms (Views: 66.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:13:18 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.6ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 86ms (Views: 83.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-08-18 17:13:21 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.3ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 78ms (Views: 75.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-08-18 17:17:00 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (4.0ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 74ms (Views: 57.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:17:02 -0400
+  
+LoadError (Unable to autoload constant Devise::SessionsController, expected /Users/jasonkwong/developer/realestinvestor/app/controllers/devise/sessions_controller.rb to define it):
+  
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:512:in `load_missing_constant'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:203:in `const_missing'
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:270:in `const_get'
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:270:in `block in constantize'
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `each'
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `inject'
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `constantize'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:583:in `get'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:614:in `constantize'
+actionpack (5.0.0.1) lib/action_dispatch/http/request.rb:93:in `controller_class'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:30:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.0.0.1) lib/action_dispatch/routing/mapper.rb:46:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+omniauth (1.3.1) lib/omniauth/strategy.rb:186:in `call!'
+omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+omniauth (1.3.1) lib/omniauth/builder.rb:63:in `call'
+warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+warden (1.2.6) lib/warden/manager.rb:34:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.4ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (107.7ms)
+Started GET "/users/sign_up" for ::1 at 2016-08-18 17:17:07 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.3ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 65ms (Views: 62.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 17:17:10 -0400
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:17:10 -0400
+  
+LoadError (Unable to autoload constant Devise::SessionsController, expected /Users/jasonkwong/developer/realestinvestor/app/controllers/devise/sessions_controller.rb to define it):
+  
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:512:in `load_missing_constant'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:203:in `const_missing'
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `each'
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `inject'
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `constantize'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:583:in `get'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:614:in `constantize'
+actionpack (5.0.0.1) lib/action_dispatch/http/request.rb:93:in `controller_class'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:30:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.0.0.1) lib/action_dispatch/routing/mapper.rb:46:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+omniauth (1.3.1) lib/omniauth/strategy.rb:186:in `call!'
+omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+omniauth (1.3.1) lib/omniauth/builder.rb:63:in `call'
+warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+warden (1.2.6) lib/warden/manager.rb:34:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.1ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (88.6ms)
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:17:39 -0400
+  
+TypeError (superclass mismatch for class SessionsController):
+  
+app/controllers/devise/sessions_controller.rb:1:in `<top (required)>'
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.7ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (84.9ms)
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:17:50 -0400
+  
+LoadError (Unable to autoload constant Devise::SessionsController, expected /Users/jasonkwong/developer/realestinvestor/app/controllers/devise/sessions_controller.rb to define it):
+  
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:512:in `load_missing_constant'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:203:in `const_missing'
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `each'
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `inject'
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `constantize'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:583:in `get'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:614:in `constantize'
+actionpack (5.0.0.1) lib/action_dispatch/http/request.rb:93:in `controller_class'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:30:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.0.0.1) lib/action_dispatch/routing/mapper.rb:46:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+omniauth (1.3.1) lib/omniauth/strategy.rb:186:in `call!'
+omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+omniauth (1.3.1) lib/omniauth/builder.rb:63:in `call'
+warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+warden (1.2.6) lib/warden/manager.rb:34:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.5ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (84.5ms)
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:18:11 -0400
+  
+NoMethodError (undefined method `make_response!' for Devise::SessionsController:Class):
+  
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.0.0.1) lib/action_dispatch/routing/mapper.rb:46:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+omniauth (1.3.1) lib/omniauth/strategy.rb:186:in `call!'
+omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+omniauth (1.3.1) lib/omniauth/builder.rb:63:in `call'
+warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+warden (1.2.6) lib/warden/manager.rb:34:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.3ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (79.8ms)
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:19:24 -0400
+  
+NoMethodError (undefined method `make_response!' for Devise::SessionsController:Class):
+  
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.0.0.1) lib/action_dispatch/routing/mapper.rb:46:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+omniauth (1.3.1) lib/omniauth/strategy.rb:186:in `call!'
+omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+omniauth (1.3.1) lib/omniauth/builder.rb:63:in `call'
+warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+warden (1.2.6) lib/warden/manager.rb:34:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.7ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (80.2ms)
+Started GET "/users" for ::1 at 2016-08-18 17:19:27 -0400
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+omniauth (1.3.1) lib/omniauth/strategy.rb:186:in `call!'
+omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+omniauth (1.3.1) lib/omniauth/builder.rb:63:in `call'
+warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+warden (1.2.6) lib/warden/manager.rb:34:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.6ms)
+Started GET "/" for ::1 at 2016-08-18 17:19:31 -0400
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:19:31 -0400
+  
+NoMethodError (undefined method `make_response!' for Devise::SessionsController:Class):
+  
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.0.0.1) lib/action_dispatch/routing/mapper.rb:46:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+omniauth (1.3.1) lib/omniauth/strategy.rb:186:in `call!'
+omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+omniauth (1.3.1) lib/omniauth/builder.rb:63:in `call'
+warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+warden (1.2.6) lib/warden/manager.rb:34:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (19.9ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (90.3ms)
+Started GET "/" for ::1 at 2016-08-18 17:19:35 -0400
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:19:35 -0400
+  
+NoMethodError (undefined method `make_response!' for Devise::SessionsController:Class):
+  
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.0.0.1) lib/action_dispatch/routing/mapper.rb:46:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+omniauth (1.3.1) lib/omniauth/strategy.rb:186:in `call!'
+omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+omniauth (1.3.1) lib/omniauth/builder.rb:63:in `call'
+warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+warden (1.2.6) lib/warden/manager.rb:34:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.5ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (82.5ms)
+Started GET "/" for ::1 at 2016-08-18 17:20:35 -0400
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:20:35 -0400
+  
+NoMethodError (undefined method `make_response!' for Devise::SessionsController:Class):
+  
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.0.0.1) lib/action_dispatch/routing/mapper.rb:46:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+omniauth (1.3.1) lib/omniauth/strategy.rb:186:in `call!'
+omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+omniauth (1.3.1) lib/omniauth/builder.rb:63:in `call'
+warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+warden (1.2.6) lib/warden/manager.rb:34:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.1ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (14.7ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (101.3ms)
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:21:42 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 66ms (Views: 49.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-08-18 17:21:45 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.3ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 74ms (Views: 68.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:23:25 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (50.8ms)
+Completed 200 OK in 377ms (Views: 345.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-08-18 17:23:29 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mPdHOMe6Qa47PO9NsrAexuuoBf87MsDOULNvM2N3HY5M/jWWHW5awgXtdY1rEE8Ml2K6w32mqo8bQGtIruxNsw==", "user"=>{"email"=>"asdfa@dd.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "asdfa@dd.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2016-08-18 21:23:29 UTC], ["last_sign_in_at", 2016-08-18 21:07:05 UTC], ["sign_in_count", 7], ["id", 2]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 205ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 17:23:29 -0400
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.0ms)
+  Rendered welcome/home.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 39ms (Views: 33.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 17:23:42 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 66ms (Views: 44.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 17:23:48 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 99ms (Views: 91.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/edit" for ::1 at 2016-08-18 17:23:49 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/edit.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/edit.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 130ms (Views: 125.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for ::1 at 2016-08-18 17:23:52 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  Rendered posts/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 152ms (Views: 47.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 17:33:35 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (12.4ms)
+  Rendered welcome/home.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 333ms (Views: 296.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 17:33:38 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 103ms (Views: 55.9ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/users/edit" for ::1 at 2016-08-18 17:33:40 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/edit.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/edit.html.erb within layouts/application (71.1ms)
+Completed 200 OK in 123ms (Views: 115.4ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-08-18 17:33:43 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"r7j1cd7/6VQCGgIIL4lEJ2DeB7HmPC8JUcVXGF6qvm8HKSsoABdPCw6H/Y0tWsARoCbTuu1z7ZTUcYN470DFFA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 17:33:43 -0400
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:33:43 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.7ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 52ms (Views: 48.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 17:33:48 -0400
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 17:33:48 -0400
+Started GET "/users/password/new" for ::1 at 2016-08-18 17:38:42 -0400
+Processing by Devise::PasswordsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/passwords/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.7ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/passwords/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 95ms (Views: 47.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 17:38:43 -0400
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 17:38:43 -0400
+Started GET "/" for ::1 at 2016-08-18 17:40:39 -0400
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:40:39 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.9ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 81ms (Views: 63.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 17:40:40 -0400
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 17:40:41 -0400
+Started GET "/" for ::1 at 2016-08-18 17:45:11 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 17ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:45:11 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 347ms (Views: 330.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 17:45:13 -0400
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 17:45:13 -0400
+Started GET "/" for ::1 at 2016-08-18 17:49:16 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 18ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:49:16 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (24.6ms)
+Started GET "/" for ::1 at 2016-08-18 17:49:17 -0400
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:49:17 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 160ms (Views: 158.6ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 447ms (Views: 429.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 17:49:19 -0400
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 17:49:19 -0400
+Started GET "/" for ::1 at 2016-08-18 17:56:22 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 17ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:56:22 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.7ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 354ms (Views: 338.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/password/new" for ::1 at 2016-08-18 17:56:24 -0400
+Processing by Devise::PasswordsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/passwords/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (3.7ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/passwords/new.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 82ms (Views: 74.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 17:56:27 -0400
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 17:56:28 -0400
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:56:31 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.9ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 118ms (Views: 115.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 17:56:33 -0400
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 17:56:34 -0400
+Started GET "/" for ::1 at 2016-08-18 17:56:38 -0400
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:56:38 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 55ms (Views: 53.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 17:56:40 -0400
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 17:56:40 -0400
+Started GET "/" for ::1 at 2016-08-18 17:57:49 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 18ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:57:49 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 311ms (Views: 293.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 17:57:51 -0400
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 17:57:52 -0400
+Started GET "/users/auth/facebook/callback?code=AQDkClGlzqp9M-Gh4VBwVDvAsNnJAVcR8cQmAT5N_VETKqURY3McGFy4o9GNH789g6H-TYSzdnEC1AHL3d_iYrhAsJ3QQsNNIV-gPOiB2DeyfZ3c4Rq_MxM0ls2KjMNjdptl4vjh4AJmPSwcq7wu2q2bqom0uPEHl2ZtSTJIF-LQvw6nYpu7U-DZDxdUUPcwd7oCH_9bgWTSC3W0bLZF38m-yZMJ9LvuxzktMkBATRWPaMa9O5XDpWDPBOtg2cB_giLzmKW5itWL8FJQv-S2_Mz1tTIvI_rZDMoIzGxP_b2SCi0_H3a2jU9_kDVYSuHh-rE&state=2ba607c9ad1d051d7017ed4ec329c84d85ae0b4f4b3bc236" for ::1 at 2016-08-18 17:57:59 -0400
+Processing by CallbacksController#failure as HTML
+  Parameters: {"code"=>"AQDkClGlzqp9M-Gh4VBwVDvAsNnJAVcR8cQmAT5N_VETKqURY3McGFy4o9GNH789g6H-TYSzdnEC1AHL3d_iYrhAsJ3QQsNNIV-gPOiB2DeyfZ3c4Rq_MxM0ls2KjMNjdptl4vjh4AJmPSwcq7wu2q2bqom0uPEHl2ZtSTJIF-LQvw6nYpu7U-DZDxdUUPcwd7oCH_9bgWTSC3W0bLZF38m-yZMJ9LvuxzktMkBATRWPaMa9O5XDpWDPBOtg2cB_giLzmKW5itWL8FJQv-S2_Mz1tTIvI_rZDMoIzGxP_b2SCi0_H3a2jU9_kDVYSuHh-rE", "state"=>"2ba607c9ad1d051d7017ed4ec329c84d85ae0b4f4b3bc236"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:58:00 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.2ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 54ms (Views: 52.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 17:58:07 -0400
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 17:58:07 -0400
+Started GET "/users/auth/facebook/callback?code=AQAGbEq20rapiW7Wm5ZbfwUX9ms-Td9imMsk6oOLpOmCqXlGA3ej8feqFnvLJHpLZSLEm80qDw8obVQNVtkWvu3NpccQGzOldcZ8h_GHujjZmiBWj37KoSx2T6EvUyVtVGx6K_n_KNcoC0L6yc5BaUXFA7K7VIfpSBrNdtHRr7FbU0Wl8YyumM_sebGt0iBhFvPOehGWNwpGM_wUu2oqjH6yQhs-PrzSIGIFzAiGlRzenX9ni95-lnD50svZ0ewT4X3tQ0IeLmd-4DSEhtlSD0X3EQVNUu3mVRvS205UJIa2vZhZETsflK3oJpZA9EYiiiw&state=5b1ac9a6cf7f35588286a98030ce39055940ee689c4abc25" for ::1 at 2016-08-18 17:58:08 -0400
+Processing by CallbacksController#failure as HTML
+  Parameters: {"code"=>"AQAGbEq20rapiW7Wm5ZbfwUX9ms-Td9imMsk6oOLpOmCqXlGA3ej8feqFnvLJHpLZSLEm80qDw8obVQNVtkWvu3NpccQGzOldcZ8h_GHujjZmiBWj37KoSx2T6EvUyVtVGx6K_n_KNcoC0L6yc5BaUXFA7K7VIfpSBrNdtHRr7FbU0Wl8YyumM_sebGt0iBhFvPOehGWNwpGM_wUu2oqjH6yQhs-PrzSIGIFzAiGlRzenX9ni95-lnD50svZ0ewT4X3tQ0IeLmd-4DSEhtlSD0X3EQVNUu3mVRvS205UJIa2vZhZETsflK3oJpZA9EYiiiw", "state"=>"5b1ac9a6cf7f35588286a98030ce39055940ee689c4abc25"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 17:58:08 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.3ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 44ms (Views: 42.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 17:59:59 -0400
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 17:59:59 -0400
+Started GET "/users/auth/facebook/callback?code=AQBHKxI4aJ8AxZQLr1iOUpaTXd2tviqEGL2cHkOKUo-xOi24oYR_Xe08l2IsWEKzoGBn_vlYd3xHF3dcDCzYv9M-NUVMw0HTTGNN8yYgjildv8L0AlOw7UeI--wwE_kXDRqZ4eaigBr0wvtz5_dpdn2oeSd5aiXKRfJ819SNqOdNPUmp25upIF_a_-VGPNd8i_Z0HPgSvHBRwzsea6by_GYfLpWPJQTapn7IJ3gN5wMq3qR_oQClOVIjV5iCM735LOvxOISgViIMFxnRfvIDNhhmF8lhbR6KCrlPub0pr-RkH6hf4UqExTjHbpQJl9ZPQXs&state=1c1c8bdfca445b1289046557554bee7327d304e60ddddc27" for ::1 at 2016-08-18 18:00:00 -0400
+Processing by CallbacksController#failure as HTML
+  Parameters: {"code"=>"AQBHKxI4aJ8AxZQLr1iOUpaTXd2tviqEGL2cHkOKUo-xOi24oYR_Xe08l2IsWEKzoGBn_vlYd3xHF3dcDCzYv9M-NUVMw0HTTGNN8yYgjildv8L0AlOw7UeI--wwE_kXDRqZ4eaigBr0wvtz5_dpdn2oeSd5aiXKRfJ819SNqOdNPUmp25upIF_a_-VGPNd8i_Z0HPgSvHBRwzsea6by_GYfLpWPJQTapn7IJ3gN5wMq3qR_oQClOVIjV5iCM735LOvxOISgViIMFxnRfvIDNhhmF8lhbR6KCrlPub0pr-RkH6hf4UqExTjHbpQJl9ZPQXs", "state"=>"1c1c8bdfca445b1289046557554bee7327d304e60ddddc27"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 18:00:00 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.8ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 49ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 18:01:48 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 17ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 18:01:48 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 352ms (Views: 335.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 18:01:50 -0400
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 18:01:51 -0400
+Started GET "/users/auth/facebook/callback?code=AQC5LvcAonvuZbC46V3KmBTsrgji3XRXtwunlOxE0NzJzc_Zut_-i2zEVcWvc5gxIZH2ncVSRGx_0I6EJMQ4PzPQd7IoiAgDqMmEVoItXXPfkUYOrJ0V4sg7SX392cU19dhWNIPDwRgISTQTY_hD-HH5vKRIUzisdkCJo_HH26Nfs-k6JKmXCCHH3DzSpr9t7rAa3w-JvlKfKp-IWrnnnqFqelfk1qJbWEeIXC7fNNfy7eBS394fZY3PjRqOkgpVk4QhwtfQ-U0cU-X3moBp7e3oKJFfiJp9Dz1WudbykwI_eX16ukGWZrpFIHur1VeejMU&state=c0c4f713afba7e9f12af8e0fa2a07f4a77721764a5af9785" for ::1 at 2016-08-18 18:01:51 -0400
+Processing by CallbacksController#failure as HTML
+  Parameters: {"code"=>"AQC5LvcAonvuZbC46V3KmBTsrgji3XRXtwunlOxE0NzJzc_Zut_-i2zEVcWvc5gxIZH2ncVSRGx_0I6EJMQ4PzPQd7IoiAgDqMmEVoItXXPfkUYOrJ0V4sg7SX392cU19dhWNIPDwRgISTQTY_hD-HH5vKRIUzisdkCJo_HH26Nfs-k6JKmXCCHH3DzSpr9t7rAa3w-JvlKfKp-IWrnnnqFqelfk1qJbWEeIXC7fNNfy7eBS394fZY3PjRqOkgpVk4QhwtfQ-U0cU-X3moBp7e3oKJFfiJp9Dz1WudbykwI_eX16ukGWZrpFIHur1VeejMU", "state"=>"c0c4f713afba7e9f12af8e0fa2a07f4a77721764a5af9785"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 18:01:51 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.5ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 44ms (Views: 43.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 18:03:49 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 17ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 18:03:49 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.3ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 323ms (Views: 306.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 18:03:51 -0400
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 18:03:51 -0400
+Started GET "/users/auth/facebook/callback?code=AQC9GQJFvzrsCj7aUpEXgO_Qqm0_KAbEswkAxbvYucbvrpR2aJRSzIT9uzlDR8qhLMh0gN53mAYWdJyRgjkCs4JNslURcsNhzDvwG53SVIGq_AN92RZ8caDTO5bQstl-KpurnwQvqME1HqqKKCMRlQuVwta67OuJQbAgyb5jiClxVN6OOl0GJIb_uGiumYmfeWGiIfKVRzbGInX4PGZmLbhrpTC11jrPVeaMRtxPOsCNOVfO1bHqx7FRL3swoKHs4otSiBXeAtFloWsck4SKK8owD2XSs38mrcj7V_qh8GHwWDt8lsVn883JZTtmU0c2_Hc&state=ddb41f1a69283d502354db64aec8841fa4fd6f4c1c078429" for ::1 at 2016-08-18 18:03:51 -0400
+Processing by CallbacksController#failure as HTML
+  Parameters: {"code"=>"AQC9GQJFvzrsCj7aUpEXgO_Qqm0_KAbEswkAxbvYucbvrpR2aJRSzIT9uzlDR8qhLMh0gN53mAYWdJyRgjkCs4JNslURcsNhzDvwG53SVIGq_AN92RZ8caDTO5bQstl-KpurnwQvqME1HqqKKCMRlQuVwta67OuJQbAgyb5jiClxVN6OOl0GJIb_uGiumYmfeWGiIfKVRzbGInX4PGZmLbhrpTC11jrPVeaMRtxPOsCNOVfO1bHqx7FRL3swoKHs4otSiBXeAtFloWsck4SKK8owD2XSs38mrcj7V_qh8GHwWDt8lsVn883JZTtmU0c2_Hc", "state"=>"ddb41f1a69283d502354db64aec8841fa4fd6f4c1c078429"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 18:03:51 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.9ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 49ms (Views: 47.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 18:03:53 -0400
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 18:03:53 -0400
+Started GET "/users/auth/facebook/callback?code=AQDmuZr0CrsyHIrPUFay1RY5EaSUXeOFW-9Yhk8AT1hxl0i-zEpNIqKuNALfqx5h3Q4OcQhoYD6UztbAZuhLfi-HJSUHrKXmQR0PplALQkmleWKcKkF98x45lHn61pfqlewNxmi3OgTXWhUYDeXDXFsBWq82bxJzuqAnneJSF2YR5aoOlrujS-Ojl8yu1I8PnligTsF790RO9rxAc61RPCqBeClGIj86vM5MQ611GgHIzHV0coQ06ZNRM4F5K8A0J7oWy53T2keX8EWPq3zlggsIv3XtdXrhFwyD0QddLWvSYlXwiHMLPUOFLaWI_QpP6ds&state=ddf3e2356190aba2805f3a58f54f0ee38c41cb0bf8430c82" for ::1 at 2016-08-18 18:03:53 -0400
+Processing by CallbacksController#failure as HTML
+  Parameters: {"code"=>"AQDmuZr0CrsyHIrPUFay1RY5EaSUXeOFW-9Yhk8AT1hxl0i-zEpNIqKuNALfqx5h3Q4OcQhoYD6UztbAZuhLfi-HJSUHrKXmQR0PplALQkmleWKcKkF98x45lHn61pfqlewNxmi3OgTXWhUYDeXDXFsBWq82bxJzuqAnneJSF2YR5aoOlrujS-Ojl8yu1I8PnligTsF790RO9rxAc61RPCqBeClGIj86vM5MQ611GgHIzHV0coQ06ZNRM4F5K8A0J7oWy53T2keX8EWPq3zlggsIv3XtdXrhFwyD0QddLWvSYlXwiHMLPUOFLaWI_QpP6ds", "state"=>"ddf3e2356190aba2805f3a58f54f0ee38c41cb0bf8430c82"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 18:03:54 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 48ms (Views: 46.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 18:04:14 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 23ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 18:04:14 -0400
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 18:04:14 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 319ms (Views: 301.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 18:04:16 -0400
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 18:04:16 -0400
+Started GET "/users/auth/facebook/callback?code=AQCFzApoPgMuNgoRlzfi5X6q7X6Ti3ICAiGe-QXrzEphEGCDbTjDD-HRH5DKvD4dP_VwwkZaRJE8V5ly_C8njooAo6BArZEs6QJwQ4Ecgnb52kFZlNNbcz6UY67qPh12DYDUg8misiFYQMKB1H6Mj3tmavOJ1TW8YY4pR-JNWpXY4AyhmzyGBc8wbEu9BkyjhyVciJd-83FtMopQhWIgTPJ3syRP8i35Y0Y5zWDvIMWg05v6hbUVyYNHatRzAEOpbWr-7aGpzYHcjvppLP33VrAoqjeX3Dy_e5ghzYTEDwSJhKVsVgTJ0ICCFVZlErLAfZY&state=c718ba6180e85eb255eeeb80c47925c25e171a6668957d75" for ::1 at 2016-08-18 18:04:16 -0400
+Processing by CallbacksController#failure as HTML
+  Parameters: {"code"=>"AQCFzApoPgMuNgoRlzfi5X6q7X6Ti3ICAiGe-QXrzEphEGCDbTjDD-HRH5DKvD4dP_VwwkZaRJE8V5ly_C8njooAo6BArZEs6QJwQ4Ecgnb52kFZlNNbcz6UY67qPh12DYDUg8misiFYQMKB1H6Mj3tmavOJ1TW8YY4pR-JNWpXY4AyhmzyGBc8wbEu9BkyjhyVciJd-83FtMopQhWIgTPJ3syRP8i35Y0Y5zWDvIMWg05v6hbUVyYNHatRzAEOpbWr-7aGpzYHcjvppLP33VrAoqjeX3Dy_e5ghzYTEDwSJhKVsVgTJ0ICCFVZlErLAfZY", "state"=>"c718ba6180e85eb255eeeb80c47925c25e171a6668957d75"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 18:04:17 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (3.9ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 47ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 18:04:19 -0400
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 18:04:19 -0400
+Started GET "/users/auth/facebook/callback?code=AQDI0VWqQ8J6C3K_WDkHm7S1IC2r_UcTI4pnjg6R2TfI0fHd7M0HkMz91f7goE2AbTSg5JDmPscseULwNUoPLGFDH5_NVYWtZ5q69zARZnjM1NcGBPUC6UyucbTZNZy-PaXpLFYAq5LZoNJXxKGx-IF1FEnCB7jGVO0NGEPKKLJ-sFDgbx6PE9tk9xxeL-POAF_9RcU2D1a64LguWJTJAq3y0G9nEabzxTlnAFcSZ4k3cBOzVhK8GqS_2jlNCc-s4SIhTngz7OHR70VGpdLiI2SMw3wYjW0-v3NrWWnBDC1t4wJBcZgrYu6vze-y_u9mg1Y&state=27c38addc94b5f9f9696b932bdc0ff1d872993885e2f65a2" for ::1 at 2016-08-18 18:04:19 -0400
+Processing by CallbacksController#failure as HTML
+  Parameters: {"code"=>"AQDI0VWqQ8J6C3K_WDkHm7S1IC2r_UcTI4pnjg6R2TfI0fHd7M0HkMz91f7goE2AbTSg5JDmPscseULwNUoPLGFDH5_NVYWtZ5q69zARZnjM1NcGBPUC6UyucbTZNZy-PaXpLFYAq5LZoNJXxKGx-IF1FEnCB7jGVO0NGEPKKLJ-sFDgbx6PE9tk9xxeL-POAF_9RcU2D1a64LguWJTJAq3y0G9nEabzxTlnAFcSZ4k3cBOzVhK8GqS_2jlNCc-s4SIhTngz7OHR70VGpdLiI2SMw3wYjW0-v3NrWWnBDC1t4wJBcZgrYu6vze-y_u9mg1Y", "state"=>"27c38addc94b5f9f9696b932bdc0ff1d872993885e2f65a2"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 18:04:19 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 47ms (Views: 46.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 18:19:03 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 17ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 18:19:03 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 343ms (Views: 327.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 18:19:06 -0400
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 18:19:06 -0400
+Started GET "/users/auth/facebook/callback?code=AQBMjRWy0XMIiCt_1y_LaS66y42PrwT7lCnlGRrttboxE9oow9X-wbAXOnfOSvrVM6qNQD_bRToGcO6L_E-Tkf704xE6UAt46m0WpPBKs8mi8F2unGHbQmlxpg1JGy86Od-706bFTBs65cU5p1orafh-eNSwLvbA931QoETkopicAn5J7n9fO0cH0pu1AEPqjHxDPfPQDAljemCQcqys9tgsZTg_2KZA_kSFY83X9zB3e0doWmv0ldzYLi1oNcyMa9VptaChQJDpOjWEjRgGsVc14dDSkuByIIJmyk6neQcUoYOMfLaNWy2VIQcRyRRh0ko&state=9b464dd8a38533968c1cb0385920cbbc51aeb71dfe1af394" for ::1 at 2016-08-18 18:19:06 -0400
+Processing by CallbacksController#failure as HTML
+  Parameters: {"code"=>"AQBMjRWy0XMIiCt_1y_LaS66y42PrwT7lCnlGRrttboxE9oow9X-wbAXOnfOSvrVM6qNQD_bRToGcO6L_E-Tkf704xE6UAt46m0WpPBKs8mi8F2unGHbQmlxpg1JGy86Od-706bFTBs65cU5p1orafh-eNSwLvbA931QoETkopicAn5J7n9fO0cH0pu1AEPqjHxDPfPQDAljemCQcqys9tgsZTg_2KZA_kSFY83X9zB3e0doWmv0ldzYLi1oNcyMa9VptaChQJDpOjWEjRgGsVc14dDSkuByIIJmyk6neQcUoYOMfLaNWy2VIQcRyRRh0ko", "state"=>"9b464dd8a38533968c1cb0385920cbbc51aeb71dfe1af394"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 18:19:06 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.6ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 42ms (Views: 40.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 18:19:09 -0400
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 18:19:09 -0400
+Started GET "/users/auth/facebook/callback?code=AQCRI-hLiHv4m8POFO8tdpgtHPWu-j6WGm_tdE9rRZcHK4ZigW_jnq3kvyEdyh83ylkVnjLoEel5Vh-VQcTFjcnZml8f5nzQe9vZJvGLgrmdjhA_amv0Yc2JDIqZ4YDinGIx9UOl3oqg4nargGy1IOD_BbakeHjUfFIK5ZDBw_7I0t3XNKoFQMuRXhLuCcBjkpvk4YNQM7UsxWewdfzoPR3CvgjCM7Sh8JqIO3OpGt7D7b9nZxOquh3zm7cb9PYC1k6MD7hrFa3hqZRV63nrRr6BWBzXvujLbHQBr1FjwztXnR2sE1YNBRYSBJoT6eVl5I8&state=a2409d4d13ead39c0c258243f74fa90a62ea4a7738aba65c" for ::1 at 2016-08-18 18:19:09 -0400
+Processing by CallbacksController#failure as HTML
+  Parameters: {"code"=>"AQCRI-hLiHv4m8POFO8tdpgtHPWu-j6WGm_tdE9rRZcHK4ZigW_jnq3kvyEdyh83ylkVnjLoEel5Vh-VQcTFjcnZml8f5nzQe9vZJvGLgrmdjhA_amv0Yc2JDIqZ4YDinGIx9UOl3oqg4nargGy1IOD_BbakeHjUfFIK5ZDBw_7I0t3XNKoFQMuRXhLuCcBjkpvk4YNQM7UsxWewdfzoPR3CvgjCM7Sh8JqIO3OpGt7D7b9nZxOquh3zm7cb9PYC1k6MD7hrFa3hqZRV63nrRr6BWBzXvujLbHQBr1FjwztXnR2sE1YNBRYSBJoT6eVl5I8", "state"=>"a2409d4d13ead39c0c258243f74fa90a62ea4a7738aba65c"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 18:19:10 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 47ms (Views: 46.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 18:19:10 -0400
+Started GET "/users/auth/facebook" for ::1 at 2016-08-18 18:19:10 -0400
+Started GET "/users/auth/facebook/callback?code=AQA8vtLV4vEg1OFp6vFwCxsPfLNon_9G0I5bhvWOFR5pihiTfd7EVCaqoMy_gSSazz7vV8Gjt8JYt3alZwIbv_CkQk1J8OtC2BhY94_wvg471a3-ouc9fEUZP2zbbRKqIkB8_faSv2JfG7OlKBHee5F4m1Oz8IjGerkbauEyQ0rPl1Zd89pH8-ri-LZdTqVHJir_NDSYdt6eOPzZpEzT_czezKD-qGNea2I0_QnlaHODoeN6I9WhtbrfgjIA1pT85l7rH8gC7l0E4eAu-UMKg9vyJUJ7Qyu4CbvoDkD9OTQ4NoOBERtUXWrY6Fn4_l-k23E&state=66117faa6c328dc724daf1f880d260328f31edd79f3a1006" for ::1 at 2016-08-18 18:19:10 -0400
+Processing by CallbacksController#failure as HTML
+  Parameters: {"code"=>"AQA8vtLV4vEg1OFp6vFwCxsPfLNon_9G0I5bhvWOFR5pihiTfd7EVCaqoMy_gSSazz7vV8Gjt8JYt3alZwIbv_CkQk1J8OtC2BhY94_wvg471a3-ouc9fEUZP2zbbRKqIkB8_faSv2JfG7OlKBHee5F4m1Oz8IjGerkbauEyQ0rPl1Zd89pH8-ri-LZdTqVHJir_NDSYdt6eOPzZpEzT_czezKD-qGNea2I0_QnlaHODoeN6I9WhtbrfgjIA1pT85l7rH8gC7l0E4eAu-UMKg9vyJUJ7Qyu4CbvoDkD9OTQ4NoOBERtUXWrY6Fn4_l-k23E", "state"=>"66117faa6c328dc724daf1f880d260328f31edd79f3a1006"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-18 18:19:11 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 68ms (Views: 66.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 18:21:21 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 19ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-08-18 18:21:21 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 314ms (Views: 297.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2016-08-18 18:21:23 -0400
+Started GET "/auth/facebook" for ::1 at 2016-08-18 18:21:24 -0400
+Started GET "/" for ::1 at 2016-08-18 18:32:43 -0400
+Started GET "/" for ::1 at 2016-08-18 18:32:43 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 14ms (ActiveRecord: 0.0ms)
+
+
+Completed 401 Unauthorized in 29ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-08-18 18:32:43 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 379ms (Views: 361.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2016-08-18 18:32:45 -0400
+Started GET "/auth/facebook" for ::1 at 2016-08-18 18:32:45 -0400
+Started GET "/auth/facebook/callback?code=AQCjs0jzcHqw1wO7gBiYUwHwN5wBj7BBuxzpVCGzz0Rd1by01hKRtExZ0OFrhpnuplDgQjq84qjapFzqgI2LFFKcAotCgQYQrbaUl56TGf1A8Z9bmBCn340XKIXluM6qKg-VC2GNNAngvzVN4nmswY-iLOeeSlf_HYY5dQaE7SZ7z9hRbHEd6TjbcsJQ-jVKSDTIodDAajz5Wmt4V0EV5OS89_zjPmSTyeqZRy4NTibbGapSn6Q8-V1yIaYUQrQ-Ae1QNObTwgnqwz3_Z1h66PZ_u2nRwvPb-OmrI8S8oD1bSeILjCYTUV4sinWrzsAZX7k&state=db30a85d3089f0ccc46b4a5a96ad7e8f208c8a3d0c3e6e73" for ::1 at 2016-08-18 18:32:46 -0400
+Processing by CallbacksController#failure as HTML
+  Parameters: {"code"=>"AQCjs0jzcHqw1wO7gBiYUwHwN5wBj7BBuxzpVCGzz0Rd1by01hKRtExZ0OFrhpnuplDgQjq84qjapFzqgI2LFFKcAotCgQYQrbaUl56TGf1A8Z9bmBCn340XKIXluM6qKg-VC2GNNAngvzVN4nmswY-iLOeeSlf_HYY5dQaE7SZ7z9hRbHEd6TjbcsJQ-jVKSDTIodDAajz5Wmt4V0EV5OS89_zjPmSTyeqZRy4NTibbGapSn6Q8-V1yIaYUQrQ-Ae1QNObTwgnqwz3_Z1h66PZ_u2nRwvPb-OmrI8S8oD1bSeILjCYTUV4sinWrzsAZX7k", "state"=>"db30a85d3089f0ccc46b4a5a96ad7e8f208c8a3d0c3e6e73"}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-08-18 18:32:46 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 63ms (Views: 60.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2016-08-18 18:32:48 -0400
+Started GET "/auth/facebook" for ::1 at 2016-08-18 18:32:48 -0400
+Started GET "/auth/facebook/callback?code=AQAS5NSOb8kos1jvxcnDtIbKwPN2qwXkxJCHJwPmVJ0GHqs7_5fPruHQJOr7JmZyLiowe2XXEqif6hLPT-Bi_Ctd9vwNdKno332wB1L3LX-LEtQZtaSH6xk0gTnksNdTcf9840RKgyMv07iK-9Ur91Kub-nh6hvMGYLdEQeRRMPnnjvKoogPKscQXUlt6mAyQ1g3ZHikTZXIK8GBkfwtqbh_-IPdbN-21GEPYDVbLJRIDPH5rGdM3-hsRolO0FN_A93HZjf-a5Hm-QOwHxOt8LqimO93qD8mRiAaQOiqmd-9O7rraIHuxqndjNQzTSDyqpU&state=afec1a3439eb835a704c9d090edbace6bdc74fde3987e148" for ::1 at 2016-08-18 18:32:48 -0400
+Processing by CallbacksController#failure as HTML
+  Parameters: {"code"=>"AQAS5NSOb8kos1jvxcnDtIbKwPN2qwXkxJCHJwPmVJ0GHqs7_5fPruHQJOr7JmZyLiowe2XXEqif6hLPT-Bi_Ctd9vwNdKno332wB1L3LX-LEtQZtaSH6xk0gTnksNdTcf9840RKgyMv07iK-9Ur91Kub-nh6hvMGYLdEQeRRMPnnjvKoogPKscQXUlt6mAyQ1g3ZHikTZXIK8GBkfwtqbh_-IPdbN-21GEPYDVbLJRIDPH5rGdM3-hsRolO0FN_A93HZjf-a5Hm-QOwHxOt8LqimO93qD8mRiAaQOiqmd-9O7rraIHuxqndjNQzTSDyqpU", "state"=>"afec1a3439eb835a704c9d090edbace6bdc74fde3987e148"}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-08-18 18:32:48 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 53ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-08-18 18:32:54 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (41.6ms)
+Completed 200 OK in 91ms (Views: 89.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2016-08-18 18:33:11 -0400
+Started GET "/auth/facebook" for ::1 at 2016-08-18 18:33:11 -0400
+Started GET "/auth/facebook/callback?code=AQDqS8DWzhqasgBJEt86hK2lH0F3rWLwmuNHmbVAyB273ukzF3yPX2Lg2cdrs2qPNnTE_0dEQDtx_CBAKIGTJrE5ZirQamAdAMzmFrxMrIoGysm-lLUK6x3yv07wEiKQ2k_BJrhoBa0XGS7qGULT_a4aLC_l0yJxz4loD90zDma_TXXkX1Mq1ENiH6XBwYEGbWz1D9eKEWR4pVsuMtgCkjFnlKWvpQHt7XRBuQbq5B4hTRwLzV5uJDYrlvO4XkSBY3RqhwbcyspqERJj8Wh2KJ9omxaRkYU_7o1duA_aBrACEBtHutIz3fUo0dqytBPSF94&state=281e984a27be24d0fb4e577f1b6da7d7f161de5bb4906e63" for ::1 at 2016-08-18 18:33:11 -0400
+Processing by CallbacksController#failure as HTML
+  Parameters: {"code"=>"AQDqS8DWzhqasgBJEt86hK2lH0F3rWLwmuNHmbVAyB273ukzF3yPX2Lg2cdrs2qPNnTE_0dEQDtx_CBAKIGTJrE5ZirQamAdAMzmFrxMrIoGysm-lLUK6x3yv07wEiKQ2k_BJrhoBa0XGS7qGULT_a4aLC_l0yJxz4loD90zDma_TXXkX1Mq1ENiH6XBwYEGbWz1D9eKEWR4pVsuMtgCkjFnlKWvpQHt7XRBuQbq5B4hTRwLzV5uJDYrlvO4XkSBY3RqhwbcyspqERJj8Wh2KJ9omxaRkYU_7o1duA_aBrACEBtHutIz3fUo0dqytBPSF94", "state"=>"281e984a27be24d0fb4e577f1b6da7d7f161de5bb4906e63"}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-08-18 18:33:12 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.9ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 54ms (Views: 52.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2016-08-18 18:33:13 -0400
+Started GET "/auth/facebook" for ::1 at 2016-08-18 18:33:13 -0400
+Started GET "/auth/facebook/callback?code=AQBkDKrJJ1YHxn6CT2brr3j83-c2vHE_HKcXQMR6KPU22Pu9LuPrIvaXVV1It5oYhnf3KwEShjFpgkqr6DY5DjmLaJ-xYeMqSstMcWR_ARSw33Ml5TJFD0vZAM8_XJtKIBKGXhOZ_COlAi6hi3z9Lo0LDo-q-0W3z7ot8X0kcJdR2K2L7Wzam4fq6I5n8yIDWkKxffGkMSktTaftlgt_d_5EVJkyHMBUF5EPMMJ3eo_tQ6qwB_lMyA3MfANvUSvpKgsEmDk6myzIJnlIJwlUsdT0H3_gqgo7FnAsu8ALQoNfIXbgT3VtP2vxNLGRBXV-jdg&state=b601375f6c4add4f740dd2eb6fe0feb22829d4fe1d2e1b3d" for ::1 at 2016-08-18 18:33:13 -0400
+Processing by CallbacksController#failure as HTML
+  Parameters: {"code"=>"AQBkDKrJJ1YHxn6CT2brr3j83-c2vHE_HKcXQMR6KPU22Pu9LuPrIvaXVV1It5oYhnf3KwEShjFpgkqr6DY5DjmLaJ-xYeMqSstMcWR_ARSw33Ml5TJFD0vZAM8_XJtKIBKGXhOZ_COlAi6hi3z9Lo0LDo-q-0W3z7ot8X0kcJdR2K2L7Wzam4fq6I5n8yIDWkKxffGkMSktTaftlgt_d_5EVJkyHMBUF5EPMMJ3eo_tQ6qwB_lMyA3MfANvUSvpKgsEmDk6myzIJnlIJwlUsdT0H3_gqgo7FnAsu8ALQoNfIXbgT3VtP2vxNLGRBXV-jdg", "state"=>"b601375f6c4add4f740dd2eb6fe0feb22829d4fe1d2e1b3d"}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-08-18 18:33:14 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.7ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 67ms (Views: 65.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook/callback?error_code=1349048&error_message=Can%27t+Load+URL%3A+The+domain+of+this+URL+isn%27t+included+in+the+app%27s+domains.+To+be+able+to+load+this+URL%2C+add+all+domains+and+subdomains+of+your+app+to+the+App+Domains+field+in+your+app+settings.&state=41b0d4a500851ca2168c812e2a482bc70e1311f70ea64770" for ::1 at 2016-08-18 18:33:20 -0400
+Processing by CallbacksController#failure as HTML
+  Parameters: {"error_code"=>"1349048", "error_message"=>"Can't Load URL: The domain of this URL isn't included in the app's domains. To be able to load this URL, add all domains and subdomains of your app to the App Domains field in your app settings.", "state"=>"41b0d4a500851ca2168c812e2a482bc70e1311f70ea64770"}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-08-18 18:33:20 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 64ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2016-08-18 18:33:22 -0400
+Started GET "/auth/facebook" for ::1 at 2016-08-18 18:33:22 -0400
+Started GET "/auth/facebook/callback?code=AQC6UY9OAtm6Eioz4f7BQcCsuwyMUR8swheC13S6ZJ5QVpGNrOUVDpy1zm6c-yX4i3ZxDPjlswurgSXF-3ajJeBwpNFXwb5nkZYgYY7vSSSMZVj9Yo4RkyCq7udEXraB53cLJH-XxlrWr8j3P-r9PszcshMOGhO70nPdoHMluq9Ia3EUpXgle57LSYsSdKOho41iTVE0-uESXYhEvKcZ6OkF23WKJKWXKL14DXZui_VxF3tfJsH4ymKbW697zFDi5eY59IgQegPeIh6yPWofC3nRqyvvlkiIKO-pgaaPYJFrP4LdHQ5MnNQ_jeVBMyIKQS8&state=ecc140441cbc23335d251e0f51cfd20b8afb196cd1964172" for ::1 at 2016-08-18 18:33:22 -0400
+Processing by CallbacksController#failure as HTML
+  Parameters: {"code"=>"AQC6UY9OAtm6Eioz4f7BQcCsuwyMUR8swheC13S6ZJ5QVpGNrOUVDpy1zm6c-yX4i3ZxDPjlswurgSXF-3ajJeBwpNFXwb5nkZYgYY7vSSSMZVj9Yo4RkyCq7udEXraB53cLJH-XxlrWr8j3P-r9PszcshMOGhO70nPdoHMluq9Ia3EUpXgle57LSYsSdKOho41iTVE0-uESXYhEvKcZ6OkF23WKJKWXKL14DXZui_VxF3tfJsH4ymKbW697zFDi5eY59IgQegPeIh6yPWofC3nRqyvvlkiIKO-pgaaPYJFrP4LdHQ5MnNQ_jeVBMyIKQS8", "state"=>"ecc140441cbc23335d251e0f51cfd20b8afb196cd1964172"}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-08-18 18:33:22 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 42ms (Views: 41.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 18:33:56 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 19ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-08-18 18:33:56 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.9ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 346ms (Views: 329.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2016-08-18 18:33:59 -0400
+Started GET "/auth/facebook" for ::1 at 2016-08-18 18:34:00 -0400
+Started GET "/auth/facebook/callback?code=AQDxEG7NLWQuoieeGmAiOUoMFZOLqArHWLVO_R_vpKlLTGJlqlGYY4iyFIyegoUibZ9HhPQRIoWHTzjYSXhG2fLJ6pAGHGa-nLOrYeAZcoNSotTZe5ILJZF7we11u8aGuwlgIvNRKeOMiXhq_x9ef4T-RvFKFPnpy0aPbcnw-AkRYB876CH1OS4BD_caBCw4g1lCN-1DrzzEl4lhReE3sOE8hD4oxjG3_RBRxpE-F0MUrcDZtYVRW647Gw8oxAOA5YXm0P-hMjohnhXY3xbIoiHqVE3ZY0YZPFiIGzAfuOz8GIOY9tOMsT66h2B-oa6SvOo&state=47954fcf05caf0c832346fc98b81e659338e7d467ab24009" for ::1 at 2016-08-18 18:34:00 -0400
+Processing by CallbacksController#failure as HTML
+  Parameters: {"code"=>"AQDxEG7NLWQuoieeGmAiOUoMFZOLqArHWLVO_R_vpKlLTGJlqlGYY4iyFIyegoUibZ9HhPQRIoWHTzjYSXhG2fLJ6pAGHGa-nLOrYeAZcoNSotTZe5ILJZF7we11u8aGuwlgIvNRKeOMiXhq_x9ef4T-RvFKFPnpy0aPbcnw-AkRYB876CH1OS4BD_caBCw4g1lCN-1DrzzEl4lhReE3sOE8hD4oxjG3_RBRxpE-F0MUrcDZtYVRW647Gw8oxAOA5YXm0P-hMjohnhXY3xbIoiHqVE3ZY0YZPFiIGzAfuOz8GIOY9tOMsT66h2B-oa6SvOo", "state"=>"47954fcf05caf0c832346fc98b81e659338e7d467ab24009"}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-08-18 18:34:01 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 45ms (Views: 44.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2016-08-18 18:34:07 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7RiJ07F+9vBasAlsjO6LPh60CVNCnaDeeyzwvYjm0VNWh6DGC7KF1+g93UjNMQewKrDmQTz2EMe2L+sXQBl3Gw==", "user"=>{"email"=>"asdfa@dd.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "asdfa@dd.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2016-08-18 22:34:07 UTC], ["last_sign_in_at", 2016-08-18 21:23:29 UTC], ["sign_in_count", 8], ["id", 2]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 204ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 18:34:07 -0400
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.2ms)
+  Rendered welcome/home.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 37ms (Views: 31.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 18:34:10 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 122ms (Views: 74.0ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 18:34:19 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 115ms (Views: 104.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2016-08-18 18:34:21 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  Rendered posts/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 139ms (Views: 45.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/posts" for ::1 at 2016-08-18 18:36:28 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m/Bes7SULe8AButQ197k68imTL2umgeajs0sxmn4dvcPB4chIS+Vjf3K7Z9IrO1FUWFs8D4RUgkJqG4Sukiu3Q==", "post"=>{"title"=>"New Post!", "content"=>"Falcons say OLB Vic Beasley Jr. is out tonight vs. Browns with a minor shoulder strain.  It happened in practice this week and it's the same right shoulder where he dealt with a torn labrum last year.  The team said it's not a serious injury and Beasley should be ready to play next week versus Miami. Beasley did not have offseason surgery on the shoulder.", "properties_attributes"=>{"0"=>{"name"=>"", "city"=>"", "condition"=>"", "price"=>""}}}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[33mUPDATE "users" SET "post_count" = ? WHERE "users"."id" = ?[0m  [["post_count", 1], ["id", 2]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "user_id") VALUES (?, ?, ?)[0m  [["title", "New Post!"], ["content", "Falcons say OLB Vic Beasley Jr. is out tonight vs. Browns with a minor shoulder strain.  It happened in practice this week and it's the same right shoulder where he dealt with a torn labrum last year.  The team said it's not a serious injury and Beasley should be ready to play next week versus Miami. Beasley did not have offseason surgery on the shoulder."], ["user_id", 2]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "properties" ("name", "city", "condition", "post_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", ""], ["condition", ""], ["post_id", 28]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/28
+Completed 302 Found in 35ms (ActiveRecord: 8.8ms)
+
+
+Started GET "/posts/28" for ::1 at 2016-08-18 18:36:28 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.6ms)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 28]]
+  Rendered posts/show.html.erb within layouts/application (35.8ms)
+Completed 200 OK in 101ms (Views: 88.5ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/posts/28/comments" for ::1 at 2016-08-18 18:36:40 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T+iCzFIqiV3dhN8W//JrrYcSKwr78zndCMf8AinJKcPHuib6tNuYvXbTuub8dJpFyFKhxtcNaUaQ9Ic+U37djw==", "comment"=>{"commenter"=>"jason", "content"=>"bad news!"}, "commit"=>"Create Comment", "post_id"=>"28"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "post_id", "content", "commenter") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["post_id", 28], ["content", "bad news!"], ["commenter", "jason"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/28
+Completed 302 Found in 17ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/posts/28" for ::1 at 2016-08-18 18:36:40 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.5ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 28]]
+  Rendered posts/show.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 80ms (Views: 71.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2016-08-18 18:36:48 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (7.7ms)
+  Rendered posts/new.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 121ms (Views: 109.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 18:36:50 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.2ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (46.5ms)
+Completed 200 OK in 111ms (Views: 103.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts/new" for ::1 at 2016-08-18 18:54:19 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (5.6ms)
+  Rendered posts/new.html.erb within layouts/application (42.5ms)
+Started DELETE "/logout" for ::1 at 2016-08-18 18:54:20 -0400
+Completed 200 OK in 464ms (Views: 366.2ms | ActiveRecord: 2.7ms)
+
+
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"QeI9CFY23/oRmEhIqAeD60z4zi9GTktCJDQWm53WchXJsJk+sMfOGrrPLbirgXIDA7hE42qwG9m8B22n52GGWQ=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 14ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2016-08-18 18:54:20 -0400
+Processing by WelcomeController#home as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-08-18 18:54:20 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (3.5ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 146ms (Views: 129.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2016-08-18 18:54:22 -0400
+Started GET "/auth/facebook" for ::1 at 2016-08-18 18:54:22 -0400
+Started GET "/auth/facebook/callback?code=AQCMjzmFE8fV835Ocb7zq0R3WeKeYn8urFUv5Q8skFoRDHSzztnLgf1ELzM0GW8RWguIZfkCGyRfKY9YVSCPaNt8D-Ups0h8JJMTfxuH5ahxiX6TQQdU2BEBUTJayLznWM85ISMRP7WCVVJLw_VTRpfTpuYT5bJPQpusxfBtREgeZ3X1oiRIqW3OZD_3qkVH9m6hMPQjfaAqjXx3WqaUCK3HlAJ35u4GIWcC8QL5A6A5Ggo2Y1B9fVPBW1YSV5TgNR76Z15w3eo2wttgcZYrGX2NqdAx9ZXK5EwvAaOQ9ynpqO4OhfCJEYLeFmr7rO47_tQ&state=f92d5d886a5499d45283f87e9a85a8e3e21f736e9bc41f2c" for ::1 at 2016-08-18 18:54:22 -0400
+Processing by CallbacksController#failure as HTML
+  Parameters: {"code"=>"AQCMjzmFE8fV835Ocb7zq0R3WeKeYn8urFUv5Q8skFoRDHSzztnLgf1ELzM0GW8RWguIZfkCGyRfKY9YVSCPaNt8D-Ups0h8JJMTfxuH5ahxiX6TQQdU2BEBUTJayLznWM85ISMRP7WCVVJLw_VTRpfTpuYT5bJPQpusxfBtREgeZ3X1oiRIqW3OZD_3qkVH9m6hMPQjfaAqjXx3WqaUCK3HlAJ35u4GIWcC8QL5A6A5Ggo2Y1B9fVPBW1YSV5TgNR76Z15w3eo2wttgcZYrGX2NqdAx9ZXK5EwvAaOQ9ynpqO4OhfCJEYLeFmr7rO47_tQ", "state"=>"f92d5d886a5499d45283f87e9a85a8e3e21f736e9bc41f2c"}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-08-18 18:54:23 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 45ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2016-08-18 18:54:25 -0400
+Started GET "/auth/facebook" for ::1 at 2016-08-18 18:54:26 -0400
+Started GET "/auth/facebook/callback?code=AQDd7SX1HYzPWbzMJaTGmZLGleU4Hpd7uWzl4zzNAvaiktouAmQ2Xj1d9F9qfwilXYxIBVMWe4sgfoyznAOrRXFatbqc8W6j-l9s6pPtbcdsVtoH0_53k9eBezmxawlRyK3q1HRQyuKxNLoNUchDoKCJPqvkL20IJ6KWTzAozxw0Y0DRD4UEcXjR_RDBfkuRhZSolQSsv4TNJrXcTtIssfv3yw7bwRbiZOLhNvS1TErgEJJRVosFluwysjP9a7Nx2qQwWL2Bm2-lW64TZ7OWYvvteMegFSuw5mUfF6-_cZyUeWwzhRoomWE6-vxRBpiEC3c&state=aa45b8c3bdd5296ea5d60e5096d6a6f8ec9f2355664a2ca0" for ::1 at 2016-08-18 18:54:26 -0400
+Processing by CallbacksController#failure as HTML
+  Parameters: {"code"=>"AQDd7SX1HYzPWbzMJaTGmZLGleU4Hpd7uWzl4zzNAvaiktouAmQ2Xj1d9F9qfwilXYxIBVMWe4sgfoyznAOrRXFatbqc8W6j-l9s6pPtbcdsVtoH0_53k9eBezmxawlRyK3q1HRQyuKxNLoNUchDoKCJPqvkL20IJ6KWTzAozxw0Y0DRD4UEcXjR_RDBfkuRhZSolQSsv4TNJrXcTtIssfv3yw7bwRbiZOLhNvS1TErgEJJRVosFluwysjP9a7Nx2qQwWL2Bm2-lW64TZ7OWYvvteMegFSuw5mUfF6-_cZyUeWwzhRoomWE6-vxRBpiEC3c", "state"=>"aa45b8c3bdd5296ea5d60e5096d6a6f8ec9f2355664a2ca0"}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-08-18 18:54:26 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 82ms (Views: 81.1ms | ActiveRecord: 0.0ms)
+
+

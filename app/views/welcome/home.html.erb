@@ -2,7 +2,7 @@
 
 <h2> real. est. investor </h2>
 
-<%if user_signed_in? %>
+<%if !!current_user %>
 <%= button_to "view tips", posts_path, :method => :get %>
 <%else%>
 <%= button_to "log in to access investor tips and tricks", new_user_path %>

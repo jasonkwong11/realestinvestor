@@ -1,7 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'impressionist'
+
+gem 'omniauth'
+
+gem 'omniauth-facebook'
+
 gem 'pry'
+
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
