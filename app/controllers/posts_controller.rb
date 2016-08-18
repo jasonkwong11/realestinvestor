@@ -15,11 +15,11 @@ before_action :authenticate_user!
 
   def new
     @post = Post.new
-    @post.properties.build(post_params)
+    @post.properties.build(post_id: @post.id)
   end
 
   def create
-    @post = Post.create(params)
+    @post = Post.create(post_params)
     redirect_to @post
   end
 
@@ -35,7 +35,7 @@ before_action :authenticate_user!
 
 private
   def post_params
-    params.require(:post).permit(:title, :content, :property_ids => [], :properties_attributes => [:name, :city, :condition])
+    params.require(:post).permit(:title, :content, :property_ids => [], :properties_attributes => [:name, :city, :condition, :price])
   end
 
   def current_post

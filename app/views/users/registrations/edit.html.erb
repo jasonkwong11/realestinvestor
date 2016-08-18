@@ -9,7 +9,7 @@
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <div>currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
   <div class="field">
@@ -32,12 +32,12 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "update" %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3>cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p>unhappy? <%= button_to "cancel my account", registration_path(resource_name), data: { confirm: "are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to "back", :back %>
