@@ -10853,3 +10853,80 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 50ms (Views: 42.3ms | ActiveRecord: 1.6ms)
 
 
+Started GET "/posts" for ::1 at 2016-08-18 16:17:22 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 52ms (Views: 47.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/edit" for ::1 at 2016-08-18 16:17:37 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/edit.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/devise-4.2.0/app/views/devise/registrations/edit.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 60ms (Views: 55.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 16:17:39 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.1ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 77ms (Views: 69.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 16:17:41 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (3.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 107ms (Views: 92.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/posts/new" for ::1 at 2016-08-18 16:17:43 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.9ms)
+  Rendered posts/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 85ms (Views: 53.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 16:17:46 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 80ms (Views: 72.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 16:17:58 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 86ms (Views: 79.2ms | ActiveRecord: 1.0ms)
+
+
