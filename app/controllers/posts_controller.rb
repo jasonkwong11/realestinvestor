@@ -23,6 +23,8 @@ before_action :authenticate_user!
     @post = Post.new(post_params)
     if @post.valid?
       @post.user_id = current_user.id
+      current_user.post_count += 1
+      current_user.save
       @post.save
       redirect_to @post
     else
@@ -54,6 +56,10 @@ private
 
   def current_post
     Post.find(params[:id])
+  end
+
+  def top_contributer
+    User.top_contributer
   end
 
 end
