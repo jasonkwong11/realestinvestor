@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 before_action :authenticate_user!
 
   def index
-    if current_user
+    if !!current_user
       @posts = Post.all
       @posts = @posts.reverse
     else
