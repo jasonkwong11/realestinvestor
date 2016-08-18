@@ -1,11 +1,11 @@
 <%= render "layouts/navbar"%>
 
-<h1>browse tips for investors. by investors.</h1><br>
+<h1>tips for investors. by investors.</h1><br>
 
 
 <% @posts.each do |post|%>
 <fieldset>
   <legend><%= link_to post.title, post_path(post)%> <br></legend>
-  <%= post.content[0..100]%><%= link_to "...read more", post_path(post)%><br><br>
+  <%= post.content[0..100]%> <%= link_to "...read more", post_path(post)%><br><br>
 </fieldset>
 <% end %>
