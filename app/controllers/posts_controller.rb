@@ -4,6 +4,7 @@ before_action :authenticate_user!
   def index
     if current_user
       @posts = Post.all
+      @posts = @posts.reverse
     else
       redirect_to root_path :alert => "Access denied."
     end
