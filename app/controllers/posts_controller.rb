@@ -1,7 +1,12 @@
 class PostsController < ApplicationController
+before_action :authenticate_user!
 
   def index
-    @posts = Post.all
+    if current_user
+      @posts = Post.all
+    else
+      redirect_to root_path :alert => "Access denied."
+    end
   end
 
   def show
@@ -10,6 +15,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @post.properties.build(post_params)
   end
 
   def create
@@ -29,7 +35,7 @@ class PostsController < ApplicationController
 
 private
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :property_ids => [], :properties_attributes => [:name, :city, :condition])
   end
 
   def current_post

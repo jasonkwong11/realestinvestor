@@ -1,0 +1,39 @@
+<%= render "layouts/navbar"%>
+
+
+<%= form_for(@post) do |post_builder| %>
+<%= post_builder.label :title %>
+<%= post_builder.text_field :title%>
+
+
+<%= post_builder.label :content %>
+<%= post_builder.text_area :content%>
+
+
+<%= post_builder.collection_check_boxes(:property_ids, Property.all, :id, :name) %>
+
+<%= post_builder.fields_for :properties do |property_builder| %>
+
+<fieldset>
+
+<legend><%= property_builder.object.name %> property details </legend>
+
+<p>
+<%= property_builder.label :name %>
+<%= property_builder.text_field :name %>
+</p>
+
+<p>
+<%= property_builder.label :city %>
+<%= property_builder.text_field :city %>
+</p>
+
+<p>
+<%= property_builder.label :condition %>
+<%= property_builder.text_field :condition %>
+</p>
+
+<%= property_builder.hidden_field :name %>
+
+<% end %>
+<% end %>
