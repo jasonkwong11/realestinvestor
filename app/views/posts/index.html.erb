@@ -1,8 +1,11 @@
 <%= render "layouts/navbar"%>
 
-<h1>INDEX PAGE FOR ALL POSTS</h1><br>
+<h1>browse tips for investors. by investors.</h1><br>
+
 
 <% @posts.each do |post|%>
-  <%= link_to post.title, post_path(post)%> <br>
-  <%= post.content%><br><br>
+<fieldset>
+  <legend><%= link_to post.title, post_path(post)%> <br></legend>
+  <%= post.content[0..100]%><%= link_to "...read more", post_path(post)%><br><br>
+</fieldset>
 <% end %>
