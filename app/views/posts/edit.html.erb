@@ -1,6 +1,8 @@
 <%= render "layouts/navbar"%>
 
 
+
+
 <%= form_for(@post) do |post_builder| %>
 <%= post_builder.label :title, "title" %><br>
 <%= post_builder.text_field :title%>
@@ -43,3 +45,9 @@
 
 <%= post_builder.submit %>
 <% end %>
+</fieldset>
+<br>
+<% if @post.user_id == current_user.id %>
+<%= button_to 'Delete Post', post_path, method: :delete %><br>
+<% end %>
+

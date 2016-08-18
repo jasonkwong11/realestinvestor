@@ -7774,3 +7774,1025 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 66ms (Views: 60.7ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/posts/17" for ::1 at 2016-08-18 14:18:29 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.3ms)
+  Rendered posts/show.html.erb within layouts/application (9.4ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_id' for #<Post:0x007fcf3b818640>):
+     6: <%= @post.content %>
+     7: <br>
+     8: <br>
+     9: <% if @post.user_id == current_user.id %>
+    10: <%= link_to 'delete post', post_path, method: :delete %>
+    11: <% end %>
+    12: <br>
+  
+app/views/posts/show.html.erb:9:in `_app_views_posts_show_html_erb___4449369513918280404_70264016639640'
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.9ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (94.4ms)
+Started GET "/posts/17" for ::1 at 2016-08-18 14:19:06 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  Rendered posts/show.html.erb within layouts/application (11.0ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (<ActionController::Parameters {"controller"=>"posts", "action"=>"show", "id"=>"17"} permitted: false>):
+     6: <%= @post.content %>
+     7: <br>
+     8: <br>
+     9: <% raise params.inspect %>
+    10: <% if @post.id == current_user.id %>
+    11: <%= link_to 'delete post', post_path, method: :delete %>
+    12: <% end %>
+  
+app/views/posts/show.html.erb:9:in `_app_views_posts_show_html_erb___4449369513918280404_70264017621840'
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (25.5ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (97.5ms)
+Started PUT "/__web_console/repl_sessions/bd10a2de970ee43e8b819229eb2068de" for ::1 at 2016-08-18 14:19:19 -0400
+Started PUT "/__web_console/repl_sessions/bd10a2de970ee43e8b819229eb2068de" for ::1 at 2016-08-18 14:19:48 -0400
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "comments" ON "users"."id" = "comments"."user_id" WHERE "comments"."post_id" = ?[0m  [["post_id", 17]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddUserIdToPosts (20160818182316)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "posts" ADD "user_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160818182316"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/posts/17" for ::1 at 2016-08-18 14:24:00 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.5ms)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 17]]
+  Rendered posts/show.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 116ms (Views: 70.7ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/posts/17/edit" for ::1 at 2016-08-18 14:24:07 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.5ms)
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = ?[0m  [["post_id", 17]]
+  Rendered posts/edit.html.erb within layouts/application (38.6ms)
+Completed 200 OK in 91ms (Views: 81.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 14:24:17 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.5ms)
+  Rendered posts/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 67ms (Views: 59.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/17" for ::1 at 2016-08-18 14:24:20 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.4ms)
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 17]]
+  Rendered posts/show.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 70ms (Views: 62.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2016-08-18 14:24:33 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.1ms)
+  Rendered posts/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 72ms (Views: 62.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/posts" for ::1 at 2016-08-18 14:25:16 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/cVo15aDxJXLPkpGvKmviC4tBBqu7K5T5HxaD6C+dIG/QKyzfjy80pP4X3osNzYgZLssiuEKJnfxYOpY2Y47sw==", "post"=>{"title"=>"The Joys of Muesli", "content"=>"Nam id lorem sodales, lobortis nulla et, ullamcorper erat. Phasellus ultrices nisl eget enim semper, at pulvinar risus posuere. Fusce vitae facilisis odio. Aliquam eu tempus leo. Sed dapibus, augue at pretium elementum, ipsum lorem aliquam nibh, in facilisis mauris tortor eget ante. Donec ut ligula imperdiet, interdum orci ac, congue mi. Maecenas vel tortor a augue eleifend dignissim sit amet sit amet leo. Etiam id sollicitudin ex. Curabitur odio nunc, scelerisque at sagittis id, pretium eget tellus. Curabitur felis quam, rutrum sit amet augue eu, tincidunt pellentesque dui. Nullam imperdiet nisi vitae erat dapibus feugiat sed quis ipsum. Praesent placerat vel massa id tempus. Duis venenatis sagittis ultricies. Aliquam dolor sapien, faucibus a efficitur a, consequat vitae neque.\r\n\r\nPraesent arcu turpis, dictum sed magna id, rutrum posuere nisl. Etiam non accumsan nulla. Duis quis mauris id sem tincidunt molestie vitae vel erat. Praesent non turpis nec leo finibus convallis. Donec sed ultrices enim. Etiam volutpat faucibus velit, id posuere justo porta at. Curabitur fermentum vel est vel tincidunt. Sed pellentesque neque vitae elit porttitor cursus.\r\n\r\nCras tincidunt justo purus. In vehicula enim ac magna lobortis posuere vel ac nisi. Phasellus vitae velit vel ipsum imperdiet viverra. Maecenas feugiat vestibulum ex et vestibulum. Nunc ante lorem, commodo et nisl sit amet, consequat sagittis eros. Cras a varius mauris. Praesent semper orci sed leo tempus hendrerit.\r\n\r\nInteger laoreet sollicitudin dolor, at tempus dui aliquet in. Vivamus consectetur dui a urna elementum, vel congue tellus consectetur. Mauris ac faucibus sem, nec sollicitudin turpis. Donec ante dolor, ultrices non ex eget, tincidunt bibendum dolor. Suspendisse auctor eget mi eget fermentum. Proin ipsum justo, fermentum vitae pulvinar nec, porttitor et lorem. In hac habitasse platea dictumst.", "properties_attributes"=>{"0"=>{"name"=>"", "city"=>"", "condition"=>"", "price"=>""}}}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content") VALUES (?, ?)[0m  [["title", "The Joys of Muesli"], ["content", "Nam id lorem sodales, lobortis nulla et, ullamcorper erat. Phasellus ultrices nisl eget enim semper, at pulvinar risus posuere. Fusce vitae facilisis odio. Aliquam eu tempus leo. Sed dapibus, augue at pretium elementum, ipsum lorem aliquam nibh, in facilisis mauris tortor eget ante. Donec ut ligula imperdiet, interdum orci ac, congue mi. Maecenas vel tortor a augue eleifend dignissim sit amet sit amet leo. Etiam id sollicitudin ex. Curabitur odio nunc, scelerisque at sagittis id, pretium eget tellus. Curabitur felis quam, rutrum sit amet augue eu, tincidunt pellentesque dui. Nullam imperdiet nisi vitae erat dapibus feugiat sed quis ipsum. Praesent placerat vel massa id tempus. Duis venenatis sagittis ultricies. Aliquam dolor sapien, faucibus a efficitur a, consequat vitae neque.\r\n\r\nPraesent arcu turpis, dictum sed magna id, rutrum posuere nisl. Etiam non accumsan nulla. Duis quis mauris id sem tincidunt molestie vitae vel erat. Praesent non turpis nec leo finibus convallis. Donec sed ultrices enim. Etiam volutpat faucibus velit, id posuere justo porta at. Curabitur fermentum vel est vel tincidunt. Sed pellentesque neque vitae elit porttitor cursus.\r\n\r\nCras tincidunt justo purus. In vehicula enim ac magna lobortis posuere vel ac nisi. Phasellus vitae velit vel ipsum imperdiet viverra. Maecenas feugiat vestibulum ex et vestibulum. Nunc ante lorem, commodo et nisl sit amet, consequat sagittis eros. Cras a varius mauris. Praesent semper orci sed leo tempus hendrerit.\r\n\r\nInteger laoreet sollicitudin dolor, at tempus dui aliquet in. Vivamus consectetur dui a urna elementum, vel congue tellus consectetur. Mauris ac faucibus sem, nec sollicitudin turpis. Donec ante dolor, ultrices non ex eget, tincidunt bibendum dolor. Suspendisse auctor eget mi eget fermentum. Proin ipsum justo, fermentum vitae pulvinar nec, porttitor et lorem. In hac habitasse platea dictumst."]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "properties" ("name", "city", "condition", "post_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", ""], ["condition", ""], ["post_id", 18]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/18
+Completed 302 Found in 15ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/posts/18" for ::1 at 2016-08-18 14:25:16 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.1ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 18]]
+  Rendered posts/show.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 54ms (Views: 44.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/18" for ::1 at 2016-08-18 14:25:46 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.3ms)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 18]]
+  Rendered posts/show.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 48ms (Views: 43.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/18" for ::1 at 2016-08-18 14:25:49 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 18]]
+  Rendered posts/show.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 44ms (Views: 38.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts" for ::1 at 2016-08-18 14:25:55 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3b8R3IySf/ruSo07gpMDNlzsXcaeC8+2BERvuoDtr0vSapWAoc/bHySONXqlAmV36VxPt2mPP36H1Nua323KZQ==", "post"=>{"title"=>"The Joys of Muesli", "content"=>"Nam id lorem sodales, lobortis nulla et, ullamcorper erat. Phasellus ultrices nisl eget enim semper, at pulvinar risus posuere. Fusce vitae facilisis odio. Aliquam eu tempus leo. Sed dapibus, augue at pretium elementum, ipsum lorem aliquam nibh, in facilisis mauris tortor eget ante. Donec ut ligula imperdiet, interdum orci ac, congue mi. Maecenas vel tortor a augue eleifend dignissim sit amet sit amet leo. Etiam id sollicitudin ex. Curabitur odio nunc, scelerisque at sagittis id, pretium eget tellus. Curabitur felis quam, rutrum sit amet augue eu, tincidunt pellentesque dui. Nullam imperdiet nisi vitae erat dapibus feugiat sed quis ipsum. Praesent placerat vel massa id tempus. Duis venenatis sagittis ultricies. Aliquam dolor sapien, faucibus a efficitur a, consequat vitae neque.\r\n\r\nPraesent arcu turpis, dictum sed magna id, rutrum posuere nisl. Etiam non accumsan nulla. Duis quis mauris id sem tincidunt molestie vitae vel erat. Praesent non turpis nec leo finibus convallis. Donec sed ultrices enim. Etiam volutpat faucibus velit, id posuere justo porta at. Curabitur fermentum vel est vel tincidunt. Sed pellentesque neque vitae elit porttitor cursus.\r\n\r\nCras tincidunt justo purus. In vehicula enim ac magna lobortis posuere vel ac nisi. Phasellus vitae velit vel ipsum imperdiet viverra. Maecenas feugiat vestibulum ex et vestibulum. Nunc ante lorem, commodo et nisl sit amet, consequat sagittis eros. Cras a varius mauris. Praesent semper orci sed leo tempus hendrerit.\r\n\r\nInteger laoreet sollicitudin dolor, at tempus dui aliquet in. Vivamus consectetur dui a urna elementum, vel congue tellus consectetur. Mauris ac faucibus sem, nec sollicitudin turpis. Donec ante dolor, ultrices non ex eget, tincidunt bibendum dolor. Suspendisse auctor eget mi eget fermentum. Proin ipsum justo, fermentum vitae pulvinar nec, porttitor et lorem. In hac habitasse platea dictumst.", "properties_attributes"=>{"0"=>{"name"=>"", "city"=>"", "condition"=>"", "price"=>""}}}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content") VALUES (?, ?)[0m  [["title", "The Joys of Muesli"], ["content", "Nam id lorem sodales, lobortis nulla et, ullamcorper erat. Phasellus ultrices nisl eget enim semper, at pulvinar risus posuere. Fusce vitae facilisis odio. Aliquam eu tempus leo. Sed dapibus, augue at pretium elementum, ipsum lorem aliquam nibh, in facilisis mauris tortor eget ante. Donec ut ligula imperdiet, interdum orci ac, congue mi. Maecenas vel tortor a augue eleifend dignissim sit amet sit amet leo. Etiam id sollicitudin ex. Curabitur odio nunc, scelerisque at sagittis id, pretium eget tellus. Curabitur felis quam, rutrum sit amet augue eu, tincidunt pellentesque dui. Nullam imperdiet nisi vitae erat dapibus feugiat sed quis ipsum. Praesent placerat vel massa id tempus. Duis venenatis sagittis ultricies. Aliquam dolor sapien, faucibus a efficitur a, consequat vitae neque.\r\n\r\nPraesent arcu turpis, dictum sed magna id, rutrum posuere nisl. Etiam non accumsan nulla. Duis quis mauris id sem tincidunt molestie vitae vel erat. Praesent non turpis nec leo finibus convallis. Donec sed ultrices enim. Etiam volutpat faucibus velit, id posuere justo porta at. Curabitur fermentum vel est vel tincidunt. Sed pellentesque neque vitae elit porttitor cursus.\r\n\r\nCras tincidunt justo purus. In vehicula enim ac magna lobortis posuere vel ac nisi. Phasellus vitae velit vel ipsum imperdiet viverra. Maecenas feugiat vestibulum ex et vestibulum. Nunc ante lorem, commodo et nisl sit amet, consequat sagittis eros. Cras a varius mauris. Praesent semper orci sed leo tempus hendrerit.\r\n\r\nInteger laoreet sollicitudin dolor, at tempus dui aliquet in. Vivamus consectetur dui a urna elementum, vel congue tellus consectetur. Mauris ac faucibus sem, nec sollicitudin turpis. Donec ante dolor, ultrices non ex eget, tincidunt bibendum dolor. Suspendisse auctor eget mi eget fermentum. Proin ipsum justo, fermentum vitae pulvinar nec, porttitor et lorem. In hac habitasse platea dictumst."]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "properties" ("name", "city", "condition", "post_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", ""], ["condition", ""], ["post_id", 19]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/19
+Completed 302 Found in 16ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/posts/19" for ::1 at 2016-08-18 14:25:55 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 19]]
+  Rendered posts/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 40ms (Views: 34.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/19" for ::1 at 2016-08-18 14:26:30 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.8ms)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 19]]
+  Rendered posts/show.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 47ms (Views: 42.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/19" for ::1 at 2016-08-18 14:26:33 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 19]]
+  Rendered posts/show.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 57ms (Views: 51.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 14:26:35 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (8.4ms)
+  Rendered posts/index.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 72ms (Views: 64.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/19" for ::1 at 2016-08-18 14:26:37 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.0ms)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 19]]
+  Rendered posts/show.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 80ms (Views: 72.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/19" for ::1 at 2016-08-18 14:26:40 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.0ms)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 19]]
+  Rendered posts/show.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 79ms (Views: 72.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/19" for ::1 at 2016-08-18 14:26:46 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.4ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 19]]
+  Rendered posts/show.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 67ms (Views: 60.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 14:26:48 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.1ms)
+  Rendered posts/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 73ms (Views: 68.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/18" for ::1 at 2016-08-18 14:26:49 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.4ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 18]]
+  Rendered posts/show.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 97ms (Views: 69.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/18" for ::1 at 2016-08-18 14:26:57 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.0ms)
+  Rendered posts/show.html.erb within layouts/application (7.9ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (<ActionController::Parameters {"controller"=>"posts", "action"=>"show", "id"=>"18"} permitted: false>):
+    12: <%= link_to 'delete post', post_path, method: :delete %>
+    13: <% end %>
+    14: 
+    15: <%= raise params.inspect %>
+    16: <br>
+    17: ___________________
+    18: <h3>comments</h3>
+  
+app/views/posts/show.html.erb:15:in `_app_views_posts_show_html_erb___4449369513918280404_70263963245580'
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.3ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (94.1ms)
+Started PUT "/__web_console/repl_sessions/a68587afc02132f22ab670171be22208" for ::1 at 2016-08-18 14:27:02 -0400
+Started PUT "/__web_console/repl_sessions/a68587afc02132f22ab670171be22208" for ::1 at 2016-08-18 14:27:07 -0400
+Started PUT "/__web_console/repl_sessions/a68587afc02132f22ab670171be22208" for ::1 at 2016-08-18 14:27:13 -0400
+Started GET "/posts/18" for ::1 at 2016-08-18 14:28:03 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.2ms)
+  Rendered posts/show.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (<ActionController::Parameters {"controller"=>"posts", "action"=>"show", "id"=>"18"} permitted: false>):
+    12: <%= link_to 'delete post', post_path, method: :delete %>
+    13: <% end %>
+    14: 
+    15: <%= raise params.inspect %>
+    16: <br>
+    17: ___________________
+    18: <h3>comments</h3>
+  
+app/views/posts/show.html.erb:15:in `_app_views_posts_show_html_erb___4449369513918280404_70264017537280'
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (16.0ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (92.4ms)
+Started GET "/posts/19" for ::1 at 2016-08-18 14:28:22 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.5ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 19]]
+  Rendered posts/show.html.erb within layouts/application (36.2ms)
+Completed 200 OK in 71ms (Views: 66.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/new" for ::1 at 2016-08-18 14:28:27 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.7ms)
+  Rendered posts/new.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 90ms (Views: 59.9ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/posts" for ::1 at 2016-08-18 14:28:32 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bWFnXSBlIuEI8yy8jSzKLwMtlKtclwAVse91hl5axDAv5KM5yNpaplA1OYAdslOHSbu8OxNxiDGk88XRJ2qLAg==", "post"=>{"title"=>"Why pay retail??", "content"=>"", "properties_attributes"=>{"0"=>{"name"=>"", "city"=>"", "condition"=>"", "price"=>""}}}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.3ms)
+  Rendered posts/new.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 98ms (Views: 80.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/new" for ::1 at 2016-08-18 14:29:07 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.5ms)
+  Rendered posts/new.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 74ms (Views: 63.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts" for ::1 at 2016-08-18 14:29:15 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tC0oQrPAAwYsi/6j7vMLVaBCy7eRAdOCEP86GQKCLby7+Kwenp2n4+ZPRuLJYm0UFfLZxmaFI0qTb445XQJIkg==", "post"=>{"title"=>"Why pay retail??", "content"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas facilisis, quam et auctor porttitor, sapien est eleifend justo, ut ultricies risus eros ut eros. Vivamus sit amet rhoncus eros. Cras ullamcorper, purus a gravida hendrerit, dui orci tincidunt nisl, at elementum lacus elit ac est. Suspendisse potenti. Suspendisse diam nisi, ultricies a porta a, accumsan ut sem. Donec sit amet ornare neque. Integer eget nulla nec erat tincidunt venenatis eget pellentesque diam. Integer varius laoreet felis, nec pulvinar est suscipit id. Nunc iaculis efficitur convallis. Sed ac elit posuere, feugiat ligula quis, tincidunt diam. Sed aliquet quis massa sed maximus. Nunc efficitur facilisis ipsum a auctor. Maecenas lacus augue, tristique sed libero a, rhoncus semper orci. Aliquam pharetra efficitur vestibulum.\r\n\r\nNam id lorem sodales, lobortis nulla et, ullamcorper erat. Phasellus ultrices nisl eget enim semper, at pulvinar risus posuere. Fusce vitae facilisis odio. Aliquam eu tempus leo. Sed dapibus, augue at pretium elementum, ipsum lorem aliquam nibh, in facilisis mauris tortor eget ante. Donec ut ligula imperdiet, interdum orci ac, congue mi. Maecenas vel tortor a augue eleifend dignissim sit amet sit amet leo. Etiam id sollicitudin ex. Curabitur odio nunc, scelerisque at sagittis id, pretium eget tellus. Curabitur felis quam, rutrum sit amet augue eu, tincidunt pellentesque dui. Nullam imperdiet nisi vitae erat dapibus feugiat sed quis ipsum. Praesent placerat vel massa id tempus. Duis venenatis sagittis ultricies. Aliquam dolor sapien, faucibus a efficitur a, consequat vitae neque.", "properties_attributes"=>{"0"=>{"name"=>"", "city"=>"", "condition"=>"", "price"=>""}}}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "user_id") VALUES (?, ?, ?)[0m  [["title", "Why pay retail??"], ["content", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas facilisis, quam et auctor porttitor, sapien est eleifend justo, ut ultricies risus eros ut eros. Vivamus sit amet rhoncus eros. Cras ullamcorper, purus a gravida hendrerit, dui orci tincidunt nisl, at elementum lacus elit ac est. Suspendisse potenti. Suspendisse diam nisi, ultricies a porta a, accumsan ut sem. Donec sit amet ornare neque. Integer eget nulla nec erat tincidunt venenatis eget pellentesque diam. Integer varius laoreet felis, nec pulvinar est suscipit id. Nunc iaculis efficitur convallis. Sed ac elit posuere, feugiat ligula quis, tincidunt diam. Sed aliquet quis massa sed maximus. Nunc efficitur facilisis ipsum a auctor. Maecenas lacus augue, tristique sed libero a, rhoncus semper orci. Aliquam pharetra efficitur vestibulum.\r\n\r\nNam id lorem sodales, lobortis nulla et, ullamcorper erat. Phasellus ultrices nisl eget enim semper, at pulvinar risus posuere. Fusce vitae facilisis odio. Aliquam eu tempus leo. Sed dapibus, augue at pretium elementum, ipsum lorem aliquam nibh, in facilisis mauris tortor eget ante. Donec ut ligula imperdiet, interdum orci ac, congue mi. Maecenas vel tortor a augue eleifend dignissim sit amet sit amet leo. Etiam id sollicitudin ex. Curabitur odio nunc, scelerisque at sagittis id, pretium eget tellus. Curabitur felis quam, rutrum sit amet augue eu, tincidunt pellentesque dui. Nullam imperdiet nisi vitae erat dapibus feugiat sed quis ipsum. Praesent placerat vel massa id tempus. Duis venenatis sagittis ultricies. Aliquam dolor sapien, faucibus a efficitur a, consequat vitae neque."], ["user_id", 3]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "properties" ("name", "city", "condition", "post_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", ""], ["condition", ""], ["post_id", 20]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/20
+Completed 302 Found in 38ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/posts/20" for ::1 at 2016-08-18 14:29:15 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 20]]
+  Rendered posts/show.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 48ms (Views: 42.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/20/edit" for ::1 at 2016-08-18 14:29:23 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.9ms)
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = ?[0m  [["post_id", 20]]
+  Rendered posts/edit.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 85ms (Views: 78.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/20/edit" for ::1 at 2016-08-18 14:30:17 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.4ms)
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = ?[0m  [["post_id", 20]]
+  Rendered posts/edit.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 93ms (Views: 81.4ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/posts/20" for ::1 at 2016-08-18 14:30:19 -0400
+  
+AbstractController::ActionNotFound (The action 'destroy' could not be found for PostsController):
+  
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+warden (1.2.6) lib/warden/manager.rb:34:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.5ms)
+Started DELETE "/posts/20" for ::1 at 2016-08-18 14:30:40 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1eVqGM546LzBqgP4WfIZrPfRYmKRs51TphhpKYGShp7aMO5E4yVMWQtuu7l+Y3/tQmFwE2Y3bZsliN0J3hLjsA==", "id"=>"20"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 20]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 49ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 14:30:40 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.2ms)
+  Rendered posts/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 38ms (Views: 33.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/19" for ::1 at 2016-08-18 14:30:42 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.5ms)
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 19]]
+  Rendered posts/show.html.erb within layouts/application (38.0ms)
+Completed 200 OK in 82ms (Views: 75.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/posts/19/edit" for ::1 at 2016-08-18 14:30:45 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (4.4ms)
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = ?[0m  [["post_id", 19]]
+  Rendered posts/edit.html.erb within layouts/application (38.7ms)
+Completed 200 OK in 82ms (Views: 75.5ms | ActiveRecord: 2.2ms)
+
+
+Started DELETE "/posts/19" for ::1 at 2016-08-18 14:30:46 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6NLArhCzQzJ5FlCs+7iObklfKJ6U5hhtkQpuP5fM6H3nB0TyPe7n17PS6O3cKegv/O8672Ni6KUSmtofyEyNUw==", "id"=>"19"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 19]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 8ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 14:30:46 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered posts/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 36ms (Views: 32.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/10" for ::1 at 2016-08-18 14:33:48 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 10]]
+  Rendered posts/show.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 63ms (Views: 54.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/10/edit" for ::1 at 2016-08-18 14:33:50 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.6ms)
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = ?[0m  [["post_id", 10]]
+  Rendered posts/edit.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 69ms (Views: 63.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/10/edit" for ::1 at 2016-08-18 14:34:26 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = ?[0m  [["post_id", 10]]
+  Rendered posts/edit.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 45ms (Views: 39.8ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/posts/10" for ::1 at 2016-08-18 14:34:28 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"J3IWjILiCNHYfw+Ih/YQRK0kTjE8ICs6YboQGyIvYa0op5LQr7+sNBK7t8mgZ3YFGJRcQMuk2/LiKqQ7fa8Egw==", "id"=>"10"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 10]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 12ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 14:34:28 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.1ms)
+  Rendered posts/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 37ms (Views: 32.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/2" for ::1 at 2016-08-18 14:34:31 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.2ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/show.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 74ms (Views: 65.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/2/edit" for ::1 at 2016-08-18 14:34:34 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.3ms)
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 89ms (Views: 83.6ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/posts/2" for ::1 at 2016-08-18 14:34:35 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0/SReOrRZ0p61tFuYNo4UWa6nduQT3P/ATE9Aoj/QmW37L3t94Ytg61qEIAF3d46molHnqgGz0ynkhaH3EaHNw==", "id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 2]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 12ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 14:34:35 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  Rendered posts/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 39ms (Views: 34.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/5" for ::1 at 2016-08-18 14:34:40 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.3ms)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  Rendered posts/show.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 77ms (Views: 71.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/5/edit" for ::1 at 2016-08-18 14:34:42 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.6ms)
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = ?[0m  [["post_id", 5]]
+  Rendered posts/edit.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 66ms (Views: 61.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/5/edit" for ::1 at 2016-08-18 14:34:54 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.5ms)
+  [1m[36mProperty Load (0.5ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = ?[0m  [["post_id", 5]]
+  Rendered posts/edit.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 43ms (Views: 38.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/5/edit" for ::1 at 2016-08-18 14:35:07 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = ?[0m  [["post_id", 5]]
+  Rendered posts/edit.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 40ms (Views: 33.8ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/posts/5" for ::1 at 2016-08-18 14:35:18 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"p4/t1JWNJ751ibKmd7B0xwpBnP2GUDymwD7+LWkCySioWmmIuNCDW79NCudQIRKGv/GOjHHUzG5DrkoNNoKsBg==", "id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 5]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 9ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 14:35:18 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered posts/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 37ms (Views: 31.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 14:35:46 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.4ms)
+  Rendered posts/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 81ms (Views: 75.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2016-08-18 14:35:49 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.7ms)
+  Rendered posts/new.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 66ms (Views: 57.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/posts" for ::1 at 2016-08-18 14:36:19 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4MelZmx4rg05XBhGnIfmsUlPLBB4D2/ffGLdqF2V1J+iQmEChMfWSmGaDXoMGX8ZA9kEgDfp5/tpfm3/JKWbrQ==", "post"=>{"title"=>"Now here's an idea!!!", "content"=>"Last week, I put together progress reports for two of the three starting quarterbacks from the Class of 2014, Jacksonville's Blake Bortles and Minnesota's Teddy Bridgewater. The third quarterback in that group might be the source of the most debate. Like Bortles and Bridgewater, Oakland's Derek Carr is working his way through the franchise quarterback churn. Carr is a quarterback of extremes at this point in his career -- he can look like a superstar and pass-rush fodder. As the Raiders continue to show signs of coming out of their decade-long shell, it remains to be seen whether Carr will be leading them or struggling to keep up.\r\n\r\nYou can't compare Carr to Bortles and Bridgewater without looking first at the men blocking for them. Bortles' and Bridgewater's offensive lines have been messes. Carr's line was one of the better units in football last year, and it's only going to get better after GM Reggie McKenzie signed star Ravens guard Kelechi Osemele in free agency. Osemele is going to start at left guard and replace the line's weakest player, departed lineman J'Marcus Webb, with Gabe Jackson moving to the right side. That's an enormous upgrade.", "properties_attributes"=>{"0"=>{"name"=>"", "city"=>"", "condition"=>"", "price"=>""}}}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "user_id") VALUES (?, ?, ?)[0m  [["title", "Now here's an idea!!!"], ["content", "Last week, I put together progress reports for two of the three starting quarterbacks from the Class of 2014, Jacksonville's Blake Bortles and Minnesota's Teddy Bridgewater. The third quarterback in that group might be the source of the most debate. Like Bortles and Bridgewater, Oakland's Derek Carr is working his way through the franchise quarterback churn. Carr is a quarterback of extremes at this point in his career -- he can look like a superstar and pass-rush fodder. As the Raiders continue to show signs of coming out of their decade-long shell, it remains to be seen whether Carr will be leading them or struggling to keep up.\r\n\r\nYou can't compare Carr to Bortles and Bridgewater without looking first at the men blocking for them. Bortles' and Bridgewater's offensive lines have been messes. Carr's line was one of the better units in football last year, and it's only going to get better after GM Reggie McKenzie signed star Ravens guard Kelechi Osemele in free agency. Osemele is going to start at left guard and replace the line's weakest player, departed lineman J'Marcus Webb, with Gabe Jackson moving to the right side. That's an enormous upgrade."], ["user_id", 3]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "properties" ("name", "city", "condition", "post_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", ""], ["condition", ""], ["post_id", 21]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/21
+Completed 302 Found in 26ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/posts/21" for ::1 at 2016-08-18 14:36:19 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 21]]
+  Rendered posts/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 40ms (Views: 36.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/21" for ::1 at 2016-08-18 14:37:08 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.3ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 21]]
+  Rendered posts/show.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 48ms (Views: 43.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/21/edit" for ::1 at 2016-08-18 14:37:11 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.6ms)
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = ?[0m  [["post_id", 21]]
+  Rendered posts/edit.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 66ms (Views: 61.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 14:37:16 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.2ms)
+  Rendered posts/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 71ms (Views: 66.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/4" for ::1 at 2016-08-18 14:37:20 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.9ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  Rendered posts/show.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 72ms (Views: 66.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/4/edit" for ::1 at 2016-08-18 14:37:21 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.6ms)
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = ?[0m  [["post_id", 4]]
+  Rendered posts/edit.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 68ms (Views: 62.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/6" for ::1 at 2016-08-18 14:37:26 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.8ms)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 6]]
+  Rendered posts/show.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 69ms (Views: 63.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/6/edit" for ::1 at 2016-08-18 14:37:28 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.6ms)
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = ?[0m  [["post_id", 6]]
+  Rendered posts/edit.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 64ms (Views: 60.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 14:37:31 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.4ms)
+  Rendered posts/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 73ms (Views: 65.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/18" for ::1 at 2016-08-18 14:37:33 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (17.7ms)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 18]]
+  Rendered posts/show.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 77ms (Views: 71.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/18/edit" for ::1 at 2016-08-18 14:37:35 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.2ms)
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = ?[0m  [["post_id", 18]]
+  Rendered posts/edit.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 68ms (Views: 63.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2016-08-18 14:37:41 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (3.7ms)
+  Rendered posts/new.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 65ms (Views: 57.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/posts" for ::1 at 2016-08-18 14:38:09 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yVmiXFat4PJ7wW1YEQxqA6JS6xcVwb+hMgzMVXHCgPGL3GY4vhKYtSMHeGSBkvOr6MTDh1onN4UnEHwCCPLPww==", "post"=>{"title"=>"How to Pay no money down .. For Morons!!", "content"=>"Carr's offensive line allowed him to do things that were relative luxuries for Bortles and Bridgewater, like breathe in the pocket without fearing for his life. Carr was pressured on only 21.6 percent of his dropbacks, the fifth-lowest rate among starting quarterbacks. A quarterback who gets the ball out quickly can distort that number (see: Tom Brady), but other metrics suggest that wasn't the case with Carr. He took 2.44 seconds before his typical pass, 15th in the league. Carr's average throw traveled 7.67 yards in the air, which was slightly below league average and one full yard deeper than the typical Bridgewater pass (6.66).", "properties_attributes"=>{"0"=>{"name"=>"", "city"=>"", "condition"=>"", "price"=>""}}}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "user_id") VALUES (?, ?, ?)[0m  [["title", "How to Pay no money down .. For Morons!!"], ["content", "Carr's offensive line allowed him to do things that were relative luxuries for Bortles and Bridgewater, like breathe in the pocket without fearing for his life. Carr was pressured on only 21.6 percent of his dropbacks, the fifth-lowest rate among starting quarterbacks. A quarterback who gets the ball out quickly can distort that number (see: Tom Brady), but other metrics suggest that wasn't the case with Carr. He took 2.44 seconds before his typical pass, 15th in the league. Carr's average throw traveled 7.67 yards in the air, which was slightly below league average and one full yard deeper than the typical Bridgewater pass (6.66)."], ["user_id", 3]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "properties" ("name", "city", "condition", "post_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", ""], ["condition", ""], ["post_id", 22]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/22
+Completed 302 Found in 14ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/posts/22" for ::1 at 2016-08-18 14:38:09 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.4ms)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 22]]
+  Rendered posts/show.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 56ms (Views: 46.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/22/edit" for ::1 at 2016-08-18 14:38:13 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.2ms)
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = ?[0m  [["post_id", 22]]
+  Rendered posts/edit.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 60ms (Views: 55.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/22/edit" for ::1 at 2016-08-18 14:38:25 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.2ms)
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = ?[0m  [["post_id", 22]]
+  Rendered posts/edit.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 42ms (Views: 38.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/22/edit" for ::1 at 2016-08-18 14:38:45 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = ?[0m  [["post_id", 22]]
+  Rendered posts/edit.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 40ms (Views: 35.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/22/edit" for ::1 at 2016-08-18 14:38:56 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = ?[0m  [["post_id", 22]]
+  Rendered posts/edit.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 41ms (Views: 35.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-18 14:39:05 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.9ms)
+  Rendered posts/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 70ms (Views: 64.9ms | ActiveRecord: 0.6ms)
+
+

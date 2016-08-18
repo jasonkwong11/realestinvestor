@@ -22,6 +22,7 @@ before_action :authenticate_user!
   def create
     @post = Post.new(post_params)
     if @post.valid?
+      @post.user_id = current_user.id
       @post.save
       redirect_to @post
     else
@@ -37,6 +38,13 @@ before_action :authenticate_user!
     @post = current_post
     @post.update(post_params)
     redirect_to post_path
+  end
+
+  def destroy
+    @post = current_post
+    @post.destroy
+    @post.save
+    redirect_to posts_path
   end
 
 private
