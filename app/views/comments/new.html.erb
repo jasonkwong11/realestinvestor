@@ -1,0 +1,16 @@
+
+<h3>add a comment to <%= @post.title %></h3>
+<%= form_for([@post, @post.comments.build]) do |f| %>
+  <p>
+    <%= f.label :commenter, "your name" %><br>
+    <%= f.text_field :commenter %>
+  </p>
+  <p>
+    <%= f.label :content, "your comment" %><br>
+    <%= f.text_area :content %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+<%= link_to 'back', post_path(@post) %>
