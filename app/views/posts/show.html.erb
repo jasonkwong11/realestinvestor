@@ -5,36 +5,16 @@
 <br>
 <%= @post.content %>
 <br>
+- - - - - - -
 <br>
-___________________
-<h3>comments</h3>
-<% @post.comments.each do |comment| %>
-  <p>
-    <strong> <%= comment.commenter %> says</strong>
-  </p>
-  <p>
-    <%= comment.content %>
-  </p>
-<% end %>
-___________________
-<h3>add a comment</h3>
-<%= form_for([@post, @post.comments.build]) do |f| %>
-  <p>
-    <%= f.label :commenter, "your name" %><br>
-    <%= f.text_field :commenter %>
-  </p>
-  <p>
-    <%= f.label :content, "your comment" %><br>
-    <%= f.text_area :content %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
- 
-
+<%= render 'property_details'%>
+<br>
+<br>
  <% if @post.user_id == current_user.id %>
 <%= button_to 'Delete Post', post_path, method: :delete %><br>
+
 <%= link_to 'edit post', edit_post_path(@post) %> |
 <% end %>
-<%= link_to 'back', posts_path %>
+<%= link_to 'back', posts_path %> |
+
+<%= link_to 'comments', post_comments_path(@post) %>

@@ -1,0 +1,6 @@
+<% @posts.each do |post|%>
+<fieldset>
+  <legend><%= link_to post.title, post_path(post)%> <br></legend>
+  <%= post.content[0..100]%> <%= link_to "...read more", post_path(post)%><br><br>
+</fieldset>
+<% end %>

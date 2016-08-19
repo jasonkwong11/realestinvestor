@@ -1,3 +1,4 @@
+<%= render 'layouts/error_messages'%>
 
 <h3>add a comment to <%= @post.title %></h3>
 <%= form_for([@post, @post.comments.build]) do |f| %>

@@ -1,13 +1,3 @@
-<h3> <%= @post.title %> comments </h3>
-<% @post.comments.each do |comment| %>
-  <p>
-    <strong> <%= comment.commenter %> says</strong>
-  </p>
-  <p>
-    <%= comment.content %>
-  </p>
-<% end %>
-
-
+<%= render 'show_comments' %>
 <%= link_to 'back', post_path(@post) %> | 
 <%= link_to 'new comment', new_post_comment_path(@post) %>

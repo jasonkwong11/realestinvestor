@@ -1,0 +1,50 @@
+
+<%= form_for(@post) do |post_builder| %>
+<%= post_builder.label :title, "title" %><br>
+<%= post_builder.text_field :title%>
+
+<br><br>
+<%= post_builder.label :content, "write your tip here" %><br>
+<%= post_builder.text_area :content, :cols => "90", :rows => "10"%>
+<br><br>
+
+<%= post_builder.fields_for :properties do |property_builder| %>
+
+<fieldset>
+
+<legend><%= property_builder.object.name %> enter relevant property details </legend>
+
+<p>
+<%= property_builder.label :name, 'street' %>
+<%= property_builder.text_field :name %>
+</p>
+
+<p>
+<%= property_builder.label :city, 'city' %>
+<%= property_builder.text_field :city %>
+</p>
+
+<p>
+<%= property_builder.label :condition, 'condition' %>
+<%= property_builder.text_field :condition %>
+</p>
+
+<p>
+<%= property_builder.label :price, 'price (optional)' %>
+<%= property_builder.text_field :price %>
+</p>
+
+
+<%= property_builder.hidden_field :name %>
+
+<% end %>
+
+<%= post_builder.submit %>
+<% end %>
+</fieldset>
+<br>
+
+<% if @post.user_id == current_user.id %>
+<%= button_to 'Delete Post', post_path, method: :delete %><br>
+<% end %>
+
