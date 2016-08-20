@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 before_action :authenticate_user!
+include PostsHelper
 
   def index
     if !!current_user
@@ -22,11 +23,7 @@ before_action :authenticate_user!
   def create
     @post = Post.new(post_params)
     if @post.valid?
-      @post.user_id = current_user.id
-      current_user.post_count += 1
-      current_user.save
-      @post.save
-      redirect_to @post
+      create_post
     else
       render :new
     end
@@ -37,7 +34,7 @@ before_action :authenticate_user!
   end
 
   def update
-    @post = current_post
+    @post = Post.find(params[:post_id])
     @post.update(post_params)
     redirect_to post_path
   end
@@ -52,10 +49,6 @@ before_action :authenticate_user!
 private
   def post_params
     params.require(:post).permit(:title, :content, :property_ids => [], :properties_attributes => [:name, :city, :condition, :price])
-  end
-
-  def current_post
-    Post.find(params[:id])
   end
 
   def top_contributer

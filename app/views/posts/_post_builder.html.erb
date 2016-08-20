@@ -15,11 +15,6 @@
 <legend><%= property_builder.object.name %> enter relevant property details </legend>
 
 <p>
-<%= property_builder.label :name, 'street' %>
-<%= property_builder.text_field :name %>
-</p>
-
-<p>
 <%= property_builder.label :city, 'city' %>
 <%= property_builder.text_field :city %>
 </p>
@@ -33,9 +28,6 @@
 <%= property_builder.label :price, 'price (optional)' %>
 <%= property_builder.text_field :price %>
 </p>
-
-
-<%= property_builder.hidden_field :name %>
 
 <% end %>
 

@@ -1,10 +1,12 @@
-<% if !@post.properties.empty? %>
+<% if !@post.properties[0].nil?%>
+- - - - - - -
+<br>
 This post refers to a property in:
 <% @post.properties.each do |property| %><br>
 
 City: 
 <%= property.city %><br>
 Condition: 
-<%= property.condition %><br>
+<%= property.condition%><br>
   <% end %>
 <% end %>
