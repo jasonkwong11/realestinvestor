@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 before_action :authenticate_user!
-include PostsHelper
+include PostsHelper, UsersHelper
 
   def new
      @user = User.new
@@ -30,13 +30,4 @@ include PostsHelper
      user = User.find(session[:user_id])
      redirect_to user
    end
-
-private
-   def set_current_session
-     session[:user_id] = params[:user][:id]
-   end
-
-  def self.top_contributer
-    self.top_contributer
-  end
 end
