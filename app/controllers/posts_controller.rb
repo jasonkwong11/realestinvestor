@@ -17,7 +17,7 @@ include PostsHelper
 
   def new
     @post = Post.new
-    @post.properties.build(post_id: @post.id)
+    add_property_details
   end
 
   def create
@@ -34,25 +34,14 @@ include PostsHelper
   end
 
   def update
-    @post = Post.find(params[:post_id])
+    @post = current_post
     @post.update(post_params)
     redirect_to post_path
   end
 
   def destroy
-    @post = current_post
-    @post.destroy
-    @post.save
+    search_and_destroy_post
     redirect_to posts_path
-  end
-
-private
-  def post_params
-    params.require(:post).permit(:title, :content, :property_ids => [], :properties_attributes => [:name, :city, :condition, :price])
-  end
-
-  def top_contributer
-    User.top_contributer
   end
 
 end

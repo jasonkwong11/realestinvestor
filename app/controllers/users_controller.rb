@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 before_action :authenticate_user!
+include PostsHelper
 
   def new
      @user = User.new
@@ -30,11 +31,7 @@ before_action :authenticate_user!
      redirect_to user
    end
 
-   private
-   def post_params
-      params.require(:user).permit(:name, :password, :nausea, :tickets, :happiness, :height, :admin)
-   end
-
+private
    def set_current_session
      session[:user_id] = params[:user][:id]
    end
