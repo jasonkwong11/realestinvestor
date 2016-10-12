@@ -1,0 +1,335 @@
+Searching 308 files for "Properties"
+
+/Users/jasonkwong/developer/realestinvestor/app/helpers/posts_helper.rb:
+   23  
+   24    def add_property_details
+   25:     @post.properties.build(post_id: @post.id)
+   26    end
+   27  
+   28  private
+   29    def post_params
+   30:     params.require(:post).permit(:title, :content, :property_ids => [], :properties_attributes => [:name, :city, :condition, :price])
+   31    end
+   32  
+
+/Users/jasonkwong/developer/realestinvestor/app/models/post.rb:
+    2    has_many :comments
+    3    has_many :users, through: :comments
+    4:   has_many :properties
+    5  
+    6    validates :title, presence: true, length: {minimum: 5}
+    7    validates :content, presence: true,  length: {minimum: 100}
+    8  
+    9:   def properties_attributes=(properties_attributes)
+   10:     properties_attributes.each do |i, property_attributes|
+   11:       self.properties.build(property_attributes)
+   12      end
+   13    end
+
+/Users/jasonkwong/developer/realestinvestor/app/views/posts/_post_builder.html.erb:
+    9  <br><br>
+   10  
+   11: <%= post_builder.fields_for :properties do |property_builder| %>
+   12  
+   13  <fieldset>
+
+/Users/jasonkwong/developer/realestinvestor/app/views/posts/_property_details.html.erb:
+    1: <% if !@post.properties[0].nil?%>
+    2  - - - - - - -
+    3  <br>
+    4  This post refers to a property in:
+    5: <% @post.properties.each do |property| %><br>
+    6  
+    7  City: 
+
+/Users/jasonkwong/developer/realestinvestor/db/development.sqlite3:
+    <binary>
+
+/Users/jasonkwong/developer/realestinvestor/db/schema.rb:
+   52    end
+   53  
+   54:   create_table "properties", force: :cascade do |t|
+   55      t.string  "name"
+   56      t.string  "city"
+
+/Users/jasonkwong/developer/realestinvestor/db/migrate/20160818070321_create_properties.rb:
+    1: class CreateProperties < ActiveRecord::Migration[5.0]
+    2    def change
+    3:     create_table :properties do |t|
+    4        t.string :name
+    5        t.string :city
+
+/Users/jasonkwong/developer/realestinvestor/db/migrate/20160818071326_add_post_id_to_properties.rb:
+    1: class AddPostIdToProperties < ActiveRecord::Migration
+    2    def change
+    3:     add_column :properties, :post_id, :integer
+    4    end
+    5  end
+
+/Users/jasonkwong/developer/realestinvestor/log/development.log:
+    <binary>
+
+814 matches across 9 filSearching 308 files for "invalid"
+
+/Users/jasonkwong/developer/realestinvestor/config/secrets.yml:
+    2  
+    3  # Your secret key is used for verifying the integrity of signed cookies.
+    4: # If you change this key, all old signed cookies will become invalid!
+    5  
+    6  # Make sure the secret is at least 30 characters and all random,
+
+/Users/jasonkwong/developer/realestinvestor/config/initializers/devise.rb:
+    3  Devise.setup do |config|
+    4    # The secret key used by Devise. Devise uses this key to generate
+    5:   # random tokens. Changing this key will render invalid all existing
+    6    # confirmation, reset password and unlock tokens in the database.
+    7    # Devise will use the `secret_key_base` as its `secret_key`
+    .
+  123  
+  124    # A period that the user is allowed to confirm their account before their
+  125:   # token becomes invalid. For example, if set to 3.days, the user can confirm
+  126    # their account within 3 days after the mail was sent, but on the fourth day
+  127    # their account can't be confirmed with the token any more.
+  ...
+  143    # config.remember_for = 2.weeks
+  144  
+  145:   # Invalidates all the remember me tokens when the user signs out.
+  146    config.expire_all_remember_me_on_sign_out = true
+  147  
+
+/Users/jasonkwong/developer/realestinvestor/config/locales/devise.en.yml:
+   10        already_authenticated: "You are already signed in."
+   11        inactive: "Your account is not activated yet."
+   12:       invalid: "Invalid %{authentication_keys} or password."
+   13        locked: "Your account is locked."
+   14        last_attempt: "You have one more attempt before your account is locked."
+   15:       not_found_in_database: "Invalid %{authentication_keys} or password."
+   16        timeout: "Your session expired. Please sign in again to continue."
+   17        unauthenticated: "You need to sign in or sign up before continuing."
+
+/Users/jasonkwong/developer/realestinvestor/log/development.log:
+    <binary>
+
+16 matches across 4 files
+
+
+Searching 308 files for "invalid"
+
+/Users/jasonkwong/developer/realestinvestor/config/secrets.yml:
+    2  
+    3  # Your secret key is used for verifying the integrity of signed cookies.
+    4: # If you change this key, all old signed cookies will become invalid!
+    5  
+    6  # Make sure the secret is at least 30 characters and all random,
+
+/Users/jasonkwong/developer/realestinvestor/config/initializers/devise.rb:
+    3  Devise.setup do |config|
+    4    # The secret key used by Devise. Devise uses this key to generate
+    5:   # random tokens. Changing this key will render invalid all existing
+    6    # confirmation, reset password and unlock tokens in the database.
+    7    # Devise will use the `secret_key_base` as its `secret_key`
+    .
+  123  
+  124    # A period that the user is allowed to confirm their account before their
+  125:   # token becomes invalid. For example, if set to 3.days, the user can confirm
+  126    # their account within 3 days after the mail was sent, but on the fourth day
+  127    # their account can't be confirmed with the token any more.
+  ...
+  143    # config.remember_for = 2.weeks
+  144  
+  145:   # Invalidates all the remember me tokens when the user signs out.
+  146    config.expire_all_remember_me_on_sign_out = true
+  147  
+
+/Users/jasonkwong/developer/realestinvestor/config/locales/devise.en.yml:
+   10        already_authenticated: "You are already signed in."
+   11        inactive: "Your account is not activated yet."
+   12:       invalid: "Invalid %{authentication_keys} or password."
+   13        locked: "Your account is locked."
+   14        last_attempt: "You have one more attempt before your account is locked."
+   15:       not_found_in_database: "Invalid %{authentication_keys} or password."
+   16        timeout: "Your session expired. Please sign in again to continue."
+   17        unauthenticated: "You need to sign in or sign up before continuing."
+
+/Users/jasonkwong/developer/realestinvestor/log/development.log:
+    <binary>
+
+16 matches across 4 files
+
+
+Searching 308 files for "Flash"
+
+0 matches
+
+Searching 308 files for "flash"
+
+0 matches
+
+Searching 308 files for "message"
+
+/Users/jasonkwong/developer/realestinvestor/app/views/comments/new.html.erb:
+    1: <%= render 'layouts/error_messages'%>
+    2  
+    3  <h3>add a comment to <%= @post.title %></h3>
+
+/Users/jasonkwong/developer/realestinvestor/app/views/devise/confirmations/new.html.erb:
+    2  
+    3  <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+    4:   <%= devise_error_messages! %>
+    5  
+    6    <div class="field">
+
+/Users/jasonkwong/developer/realestinvestor/app/views/devise/passwords/edit.html.erb:
+    2  
+    3  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+    4:   <%= devise_error_messages! %>
+    5    <%= f.hidden_field :reset_password_token %>
+    6  
+
+/Users/jasonkwong/developer/realestinvestor/app/views/devise/passwords/new.html.erb:
+    2  
+    3  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    4:   <%= devise_error_messages! %>
+    5  
+    6    <div class="field">
+
+/Users/jasonkwong/developer/realestinvestor/app/views/devise/registrations/edit.html.erb:
+    2  
+    3  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    4:   <%= devise_error_messages! %>
+    5  
+    6    <div class="field">
+
+/Users/jasonkwong/developer/realestinvestor/app/views/devise/registrations/new.html.erb:
+    2  
+    3  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    4:   <%= devise_error_messages! %>
+    5  
+    6    <div class="field">
+
+/Users/jasonkwong/developer/realestinvestor/app/views/devise/unlocks/new.html.erb:
+    2  
+    3  <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+    4:   <%= devise_error_messages! %>
+    5  
+    6    <div class="field">
+
+/Users/jasonkwong/developer/realestinvestor/app/views/layouts/_error_messages.html.erb:
+    7   
+    8      <ul>
+    9:     <% @post.errors.full_messages.each do |msg| %>
+   10        <li><%= msg %></li>
+   11      <% end %>
+
+/Users/jasonkwong/developer/realestinvestor/app/views/posts/edit.html.erb:
+    1  <%= render "layouts/navbar"%>
+    2: <%= render 'layouts/error_messages'%>
+    3  <%= render 'post_builder' %>
+    4  
+
+/Users/jasonkwong/developer/realestinvestor/app/views/posts/new.html.erb:
+    1  <%= render "layouts/navbar"%>
+    2: <%= render 'layouts/error_messages'%>
+    3  <%= render 'post_builder' %>
+    4  
+
+/Users/jasonkwong/developer/realestinvestor/app/views/users/confirmations/new.html.erb:
+    2  
+    3  <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+    4:   <%= devise_error_messages! %>
+    5  
+    6    <div class="field">
+
+/Users/jasonkwong/developer/realestinvestor/app/views/users/passwords/edit.html.erb:
+    2  
+    3  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+    4:   <%= devise_error_messages! %>
+    5    <%= f.hidden_field :reset_password_token %>
+    6  
+
+/Users/jasonkwong/developer/realestinvestor/app/views/users/passwords/new.html.erb:
+    2  
+    3  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    4:   <%= devise_error_messages! %>
+    5  
+    6    <div class="field">
+
+/Users/jasonkwong/developer/realestinvestor/app/views/users/registrations/edit.html.erb:
+    2  
+    3  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    4:   <%= devise_error_messages! %>
+    5  
+    6    <div class="field">
+
+/Users/jasonkwong/developer/realestinvestor/app/views/users/registrations/new.html.erb:
+    2  
+    3  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    4:   <%= devise_error_messages! %>
+    5  
+    6    <div class="field">
+
+/Users/jasonkwong/developer/realestinvestor/app/views/users/unlocks/new.html.erb:
+    2  
+    3  <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+    4:   <%= devise_error_messages! %>
+    5  
+    6    <div class="field">
+
+/Users/jasonkwong/developer/realestinvestor/bin/rails:
+    3    load File.expand_path('../spring', __FILE__)
+    4  rescue LoadError => e
+    5:   raise unless e.message.include?('spring')
+    6  end
+    7  APP_PATH = File.expand_path('../config/application', __dir__)
+
+/Users/jasonkwong/developer/realestinvestor/bin/rake:
+    3    load File.expand_path('../spring', __FILE__)
+    4  rescue LoadError => e
+    5:   raise unless e.message.include?('spring')
+    6  end
+    7  require_relative '../config/boot'
+
+/Users/jasonkwong/developer/realestinvestor/config/locales/devise.en.yml:
+   40        signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
+   41        signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
+   42:       signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
+   43        update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address."
+   44        updated: "Your account has been updated successfully."
+   ..
+   52        unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+   53    errors:
+   54:     messages:
+   55        already_confirmed: "was already confirmed, please try signing in"
+   56        confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
+
+/Users/jasonkwong/developer/realestinvestor/db/development.sqlite3:
+    <binary>
+
+/Users/jasonkwong/developer/realestinvestor/db/schema.rb:
+   31      t.string   "ip_address"
+   32      t.string   "session_hash"
+   33:     t.text     "message"
+   34      t.text     "referrer"
+   35      t.datetime "created_at"
+   ..
+   41      t.index ["impressionable_type", "impressionable_id", "request_hash"], name: "poly_request_index"
+   42      t.index ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index"
+   43:     t.index ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index"
+   44      t.index ["user_id"], name: "index_impressions_on_user_id"
+   45    end
+
+/Users/jasonkwong/developer/realestinvestor/db/migrate/20160818185056_create_impressions_table.rb:
+   11        t.string :ip_address
+   12        t.string :session_hash
+   13:       t.text :message
+   14        t.text :referrer
+   15        t.timestamps
+   16      end
+   17:     add_index :impressions, [:impressionable_type, :message, :impressionable_id], :name => "impressionable_type_message_index", :unique => false, :length => {:message => 255 }
+   18      add_index :impressions, [:impressionable_type, :impressionable_id, :request_hash], :name => "poly_request_index", :unique => false
+   19      add_index :impressions, [:impressionable_type, :impressionable_id, :ip_address], :name => "poly_ip_index", :unique => false
+
+/Users/jasonkwong/developer/realestinvestor/log/development.log:
+    <binary>
+
+133 matches across 23 files
