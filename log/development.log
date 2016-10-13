@@ -21851,3 +21851,663 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 103ms (Views: 95.3ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/" for ::1 at 2016-10-12 19:58:52 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering welcome/home.html.erb within layouts/application
+Started GET "/" for ::1 at 2016-10-12 19:58:52 -0400
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (16.2ms)
+  Rendered welcome/home.html.erb within layouts/application (25.9ms)
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.1ms)
+  Rendered welcome/home.html.erb within layouts/application (115.1ms)
+Completed 200 OK in 471ms (Views: 401.5ms | ActiveRecord: 1.3ms)
+
+
+Completed 200 OK in 362ms (Views: 354.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for ::1 at 2016-10-12 19:58:56 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered posts/_top_contributor.html.erb (3.2ms)
+  Rendered posts/_all_posts.html.erb (5.7ms)
+  Rendered posts/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 67ms (Views: 46.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts/new" for ::1 at 2016-10-12 19:59:00 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.8ms)
+  Rendered layouts/_error_messages.html.erb (0.6ms)
+  Rendered posts/_post_builder.html.erb (30.4ms)
+  Rendered posts/new.html.erb within layouts/application (39.9ms)
+Completed 200 OK in 146ms (Views: 79.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts" for ::1 at 2016-10-12 19:59:04 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered posts/_top_contributor.html.erb (3.7ms)
+  Rendered posts/_all_posts.html.erb (16.7ms)
+  Rendered posts/index.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 79ms (Views: 73.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/11" for ::1 at 2016-10-12 19:59:06 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.0ms)
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = ?[0m  [["post_id", 11]]
+  Rendered posts/_property_details.html.erb (24.5ms)
+  Rendered posts/show.html.erb within layouts/application (34.3ms)
+Completed 200 OK in 120ms (Views: 110.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/11/comments" for ::1 at 2016-10-12 19:59:08 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"post_id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering comments/index.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 11]]
+  Rendered comments/_show_comments.html.erb (2.5ms)
+  Rendered comments/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 98ms (Views: 73.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/11" for ::1 at 2016-10-12 19:59:09 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.1ms)
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = ?[0m  [["post_id", 11]]
+  Rendered posts/_property_details.html.erb (16.8ms)
+  Rendered posts/show.html.erb within layouts/application (36.7ms)
+Completed 200 OK in 123ms (Views: 118.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts" for ::1 at 2016-10-12 19:59:11 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (3.2ms)
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered posts/_top_contributor.html.erb (10.2ms)
+  Rendered posts/_all_posts.html.erb (10.2ms)
+  Rendered posts/index.html.erb within layouts/application (38.6ms)
+Completed 200 OK in 115ms (Views: 99.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/posts/30" for ::1 at 2016-10-12 19:59:13 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.9ms)
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = ?[0m  [["post_id", 30]]
+  Rendered posts/_property_details.html.erb (5.5ms)
+  Rendered posts/show.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 90ms (Views: 83.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/30/comments" for ::1 at 2016-10-12 19:59:14 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"post_id"=>"30"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  Rendering comments/index.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 30]]
+  Rendered comments/_show_comments.html.erb (39.2ms)
+  Rendered comments/index.html.erb within layouts/application (43.3ms)
+Completed 200 OK in 128ms (Views: 120.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/30" for ::1 at 2016-10-12 19:59:16 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (3.2ms)
+  [1m[36mProperty Load (1.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = ?[0m  [["post_id", 30]]
+  Rendered posts/_property_details.html.erb (7.7ms)
+  Rendered posts/show.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 124ms (Views: 115.8ms | ActiveRecord: 1.6ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (372.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "dev_database"[0m
+  [1m[35m (263.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "test_database"[0m
+  [1m[35m (35.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (12.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(737815420147457505);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20160818011854)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "name" character varying, "email" character varying, "password" character varying)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818011854"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePosts (20160818012128)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "posts" ("id" serial primary key, "title" character varying, "content" text, "time_created" timestamp)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818012128"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateComments (20160818012233)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "comments" ("id" serial primary key, "user_id" integer, "post_id" integer, "content" text, "time_created" timestamp)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818012233"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveEmailFromUsers (20160818043752)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.5ms)[0m  [1m[35mALTER TABLE "users" DROP "email"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818043752"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDeviseToUsers (20160818043920)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.0ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (9.8ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp[0m
+  [1m[35m (6.1ms)[0m  [1m[35mALTER TABLE "users" ADD "sign_in_count" integer DEFAULT 0 NOT NULL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "current_sign_in_at" timestamp[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "last_sign_in_at" timestamp[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "current_sign_in_ip" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "last_sign_in_ip" character varying[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818043920"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProperties (20160818070321)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "properties" ("id" serial primary key, "name" character varying, "city" character varying, "condition" character varying, "price" integer)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818070321"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPostIdToProperties (20160818071326)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class AddPostIdToProperties < ActiveRecord::Migration[4.2] (called from load at /Users/jasonkwong/.rvm/gems/ruby-2.3.1/bin/rake:23)
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "properties" ADD "post_id" integer[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818071326"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddCommenterToComments (20160818162332)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "comments" ADD "commenter" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818162332"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserIdToPosts (20160818182316)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "posts" ADD "user_id" integer[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818182316"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateImpressionsTable (20160818185056)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class CreateImpressionsTable < ActiveRecord::Migration[4.2] (called from load at /Users/jasonkwong/.rvm/gems/ruby-2.3.1/bin/rake:23)
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "impressions" ("id" serial primary key, "impressionable_type" character varying, "impressionable_id" integer, "user_id" integer, "controller_name" character varying, "action_name" character varying, "view_name" character varying, "request_hash" character varying, "ip_address" character varying, "session_hash" character varying, "message" text, "referrer" text, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "impressionable_type_message_index" ON "impressions"  ("impressionable_type", "message", "impressionable_id")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "poly_request_index" ON "impressions"  ("impressionable_type", "impressionable_id", "request_hash")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "poly_ip_index" ON "impressions"  ("impressionable_type", "impressionable_id", "ip_address")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "poly_session_index" ON "impressions"  ("impressionable_type", "impressionable_id", "session_hash")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "controlleraction_request_index" ON "impressions"  ("controller_name", "action_name", "request_hash")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "controlleraction_ip_index" ON "impressions"  ("controller_name", "action_name", "ip_address")[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE  INDEX  "controlleraction_session_index" ON "impressions"  ("controller_name", "action_name", "session_hash")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_impressions_on_user_id" ON "impressions"  ("user_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818185056"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPostCountToUsers (20160818185846)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.1ms)[0m  [1m[35mALTER TABLE "users" ADD "post_count" integer DEFAULT 0[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818185846"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToUsers (20160818203319)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" character varying[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" character varying[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818203319"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-10-13 00:02:00 UTC], ["updated_at", 2016-10-13 00:02:00 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(737815420147457505)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'comments'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'impressions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'posts'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'properties'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "dev_database"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "test_database"[0m
+  [1m[35m (11.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4816605268636486185);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20160818011854)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "name" character varying, "email" character varying, "password" character varying)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818011854"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePosts (20160818012128)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "posts" ("id" serial primary key, "title" character varying, "content" text, "time_created" timestamp)[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818012128"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateComments (20160818012233)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "comments" ("id" serial primary key, "user_id" integer, "post_id" integer, "content" text, "time_created" timestamp)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818012233"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveEmailFromUsers (20160818043752)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" DROP "email"[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818043752"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDeviseToUsers (20160818043920)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.8ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (6.5ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp[0m
+  [1m[35m (4.7ms)[0m  [1m[35mALTER TABLE "users" ADD "sign_in_count" integer DEFAULT 0 NOT NULL[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "current_sign_in_at" timestamp[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "last_sign_in_at" timestamp[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "current_sign_in_ip" character varying[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "last_sign_in_ip" character varying[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818043920"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProperties (20160818070321)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "properties" ("id" serial primary key, "name" character varying, "city" character varying, "condition" character varying, "price" integer)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818070321"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPostIdToProperties (20160818071326)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class AddPostIdToProperties < ActiveRecord::Migration[4.2] (called from load at /Users/jasonkwong/.rvm/gems/ruby-2.3.1/bin/rake:23)
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "properties" ADD "post_id" integer[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818071326"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddCommenterToComments (20160818162332)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "comments" ADD "commenter" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818162332"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserIdToPosts (20160818182316)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "posts" ADD "user_id" integer[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818182316"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateImpressionsTable (20160818185056)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class CreateImpressionsTable < ActiveRecord::Migration[4.2] (called from load at /Users/jasonkwong/.rvm/gems/ruby-2.3.1/bin/rake:23)
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "impressions" ("id" serial primary key, "impressionable_type" character varying, "impressionable_id" integer, "user_id" integer, "controller_name" character varying, "action_name" character varying, "view_name" character varying, "request_hash" character varying, "ip_address" character varying, "session_hash" character varying, "message" text, "referrer" text, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "impressionable_type_message_index" ON "impressions"  ("impressionable_type", "message", "impressionable_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "poly_request_index" ON "impressions"  ("impressionable_type", "impressionable_id", "request_hash")[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "poly_ip_index" ON "impressions"  ("impressionable_type", "impressionable_id", "ip_address")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "poly_session_index" ON "impressions"  ("impressionable_type", "impressionable_id", "session_hash")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "controlleraction_request_index" ON "impressions"  ("controller_name", "action_name", "request_hash")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "controlleraction_ip_index" ON "impressions"  ("controller_name", "action_name", "ip_address")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "controlleraction_session_index" ON "impressions"  ("controller_name", "action_name", "session_hash")[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE  INDEX  "index_impressions_on_user_id" ON "impressions"  ("user_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818185056"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPostCountToUsers (20160818185846)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.2ms)[0m  [1m[35mALTER TABLE "users" ADD "post_count" integer DEFAULT 0[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818185846"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToUsers (20160818203319)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818203319"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-10-13 00:03:01 UTC], ["updated_at", 2016-10-13 00:03:01 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4816605268636486185)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (5.4ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'comments'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'impressions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'posts'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'properties'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+Started GET "/" for ::1 at 2016-10-12 20:03:11 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 401 Unauthorized in 35ms (ActiveRecord: 8.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-10-12 20:03:11 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.2ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 342ms (Views: 319.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-10-12 20:03:18 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/jasonkwong/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (4.7ms)
+  Rendered /Users/jasonkwong/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 76ms (Views: 75.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-10-12 20:03:23 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4HGc17vfqWFeOcMUPoshrBWuslPbzUnce+u0bZTzitprsXBU/9UTJQB8dyGCw6phRhnSsZ6siy950xHjxgK9aA==", "user"=>{"email"=>"donald@trump.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "donald@trump.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password") VALUES ($1, $2) RETURNING "id"[0m  [["email", "donald@trump.com"], ["encrypted_password", "$2a$11$xjL1TLfyhzjo8i/C4BjLrOgjNDa/25OAB8QbrXgedv.5oJ9Q9SQ9i"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5 WHERE "users"."id" = $6[0m  [["sign_in_count", 1], ["current_sign_in_at", 2016-10-13 00:03:24 UTC], ["last_sign_in_at", 2016-10-13 00:03:24 UTC], ["current_sign_in_ip", "::1"], ["last_sign_in_ip", "::1"], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 231ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/" for ::1 at 2016-10-12 20:03:24 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.1ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered posts/_top_contributor.html.erb (4.0ms)
+  Rendered posts/_all_posts.html.erb (0.5ms)
+  Rendered posts/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 61ms (Views: 42.3ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2016-10-12 20:03:29 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.1ms)
+  Rendered layouts/_error_messages.html.erb (0.6ms)
+  Rendered posts/_post_builder.html.erb (5.7ms)
+  Rendered posts/new.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 175ms (Views: 54.0ms | ActiveRecord: 8.4ms)
+
+
+Started POST "/posts" for ::1 at 2016-10-12 20:03:50 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gBWPCrILTwHSS/90IoB+5DYNJj9jLkOcT9cL7CcOF+QZBd7W6GqEJsyVLG7mvpORAJKM3tJhCDPBqUN6FiKumA==", "post"=>{"title"=>"How to Build a Wall", "content"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non finibus nibh. In gravida ipsum vitae ante lobortis porttitor. Proin mollis fringilla nisl, tristique volutpat mi varius vitae. Aliquam non purus rhoncus, congue justo eget, faucibus diam. Duis laoreet nunc sit amet semper sagittis. Praesent vitae lacus felis. Aliquam nec ante tincidunt, varius nisl at, hendrerit dolor. Vestibulum ac tempus eros, quis sodales metus. Nullam porttitor consectetur nulla, sed pretium erat vehicula ut. Nullam pulvinar risus dolor, lacinia rhoncus nisi ornare nec. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\r\n\r\nInteger eget turpis dapibus augue sodales tincidunt id vel arcu. Nam cursus pulvinar metus, eu placerat libero gravida quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eu gravida neque, id consectetur nisi. Donec fringilla porta leo, posuere semper leo vehicula id. Suspendisse sit amet nisi porta, molestie quam ullamcorper, gravida mauris. Mauris ligula arcu, placerat sed metus sed, dignissim sagittis orci. Nulla facilisi. Duis nec vehicula augue. Nullam maximus, urna ut ornare faucibus, orci leo malesuada risus, vel pellentesque purus ante et ipsum. In porttitor ac nisl eu fringilla. Mauris lacinia eros in elit mattis, a tristique tortor elementum. Nulla quis ligula eu justo aliquam porttitor. Praesent eu lacus id ipsum blandit euismod.\r\n\r\nFusce blandit sapien risus, eu maximus ante auctor quis. Integer pulvinar turpis sapien, eu efficitur tortor posuere ut. Fusce commodo nisi eget aliquet maximus. Aenean nec ipsum nibh. Nunc hendrerit odio non cursus elementum. Integer placerat scelerisque dolor, eleifend auctor tortor tincidunt tempus. Praesent auctor fermentum vulputate. Cras consequat rutrum fringilla.\r\n\r\nVivamus sed porta magna. In tempus bibendum mauris. Donec vitae ultrices ex, sed lacinia purus. Nam nisi ante, pharetra a diam at, sagittis lacinia nibh. Vestibulum ut lobortis arcu. Suspendisse id bibendum nulla. Duis dictum odio erat, et pharetra neque congue quis. Morbi et tempus orci. Ut accumsan, sapien sed porta blandit, enim justo scelerisque dolor, at tempus mauris est gravida dui. Cras bibendum, ex eget interdum venenatis, libero sem tempor neque, eu vestibulum mauris metus quis urna.\r\n\r\nDonec mattis dictum nisi, nec auctor orci. Praesent auctor commodo nibh mattis consequat. Nunc ullamcorper elit in volutpat dictum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non lorem malesuada, tempus sem eu, laoreet nibh. Curabitur at sollicitudin sem, eget condimentum risus. Mauris id condimentum mi, sed posuere ante. Aliquam facilisis convallis posuere.\r\n\r\n", "properties_attributes"=>{"0"=>{"city"=>"Mexico City", "condition"=>"Yuuge", "price"=>""}}}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "users" SET "post_count" = $1 WHERE "users"."id" = $2[0m  [["post_count", 1], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "user_id") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "How to Build a Wall"], ["content", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non finibus nibh. In gravida ipsum vitae ante lobortis porttitor. Proin mollis fringilla nisl, tristique volutpat mi varius vitae. Aliquam non purus rhoncus, congue justo eget, faucibus diam. Duis laoreet nunc sit amet semper sagittis. Praesent vitae lacus felis. Aliquam nec ante tincidunt, varius nisl at, hendrerit dolor. Vestibulum ac tempus eros, quis sodales metus. Nullam porttitor consectetur nulla, sed pretium erat vehicula ut. Nullam pulvinar risus dolor, lacinia rhoncus nisi ornare nec. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\r\n\r\nInteger eget turpis dapibus augue sodales tincidunt id vel arcu. Nam cursus pulvinar metus, eu placerat libero gravida quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eu gravida neque, id consectetur nisi. Donec fringilla porta leo, posuere semper leo vehicula id. Suspendisse sit amet nisi porta, molestie quam ullamcorper, gravida mauris. Mauris ligula arcu, placerat sed metus sed, dignissim sagittis orci. Nulla facilisi. Duis nec vehicula augue. Nullam maximus, urna ut ornare faucibus, orci leo malesuada risus, vel pellentesque purus ante et ipsum. In porttitor ac nisl eu fringilla. Mauris lacinia eros in elit mattis, a tristique tortor elementum. Nulla quis ligula eu justo aliquam porttitor. Praesent eu lacus id ipsum blandit euismod.\r\n\r\nFusce blandit sapien risus, eu maximus ante auctor quis. Integer pulvinar turpis sapien, eu efficitur tortor posuere ut. Fusce commodo nisi eget aliquet maximus. Aenean nec ipsum nibh. Nunc hendrerit odio non cursus elementum. Integer placerat scelerisque dolor, eleifend auctor tortor tincidunt tempus. Praesent auctor fermentum vulputate. Cras consequat rutrum fringilla.\r\n\r\nVivamus sed porta magna. In tempus bibendum mauris. Donec vitae ultrices ex, sed lacinia purus. Nam nisi ante, pharetra a diam at, sagittis lacinia nibh. Vestibulum ut lobortis arcu. Suspendisse id bibendum nulla. Duis dictum odio erat, et pharetra neque congue quis. Morbi et tempus orci. Ut accumsan, sapien sed porta blandit, enim justo scelerisque dolor, at tempus mauris est gravida dui. Cras bibendum, ex eget interdum venenatis, libero sem tempor neque, eu vestibulum mauris metus quis urna.\r\n\r\nDonec mattis dictum nisi, nec auctor orci. Praesent auctor commodo nibh mattis consequat. Nunc ullamcorper elit in volutpat dictum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non lorem malesuada, tempus sem eu, laoreet nibh. Curabitur at sollicitudin sem, eget condimentum risus. Mauris id condimentum mi, sed posuere ante. Aliquam facilisis convallis posuere.\r\n\r\n"], ["user_id", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "properties" ("city", "condition", "post_id") VALUES ($1, $2, $3) RETURNING "id"[0m  [["city", "Mexico City"], ["condition", "Yuuge"], ["post_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 31ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/posts/1" for ::1 at 2016-10-12 20:03:50 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.1ms)
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = $1[0m  [["post_id", 1]]
+  Rendered posts/_property_details.html.erb (3.4ms)
+  Rendered posts/show.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 68ms (Views: 56.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts/1/comments" for ::1 at 2016-10-12 20:03:54 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"post_id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering comments/index.html.erb within layouts/application
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  Rendered comments/_show_comments.html.erb (4.0ms)
+  Rendered comments/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 122ms (Views: 75.9ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/posts/1/comments/new" for ::1 at 2016-10-12 20:03:57 -0400
+Processing by CommentsController#new as HTML
+  Parameters: {"post_id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering comments/new.html.erb within layouts/application
+  Rendered layouts/_error_messages.html.erb (2.0ms)
+  Rendered comments/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 101ms (Views: 68.5ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/posts/1/comments" for ::1 at 2016-10-12 20:04:10 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QS7T5W0E/qx4aqatVW7RRjiH7/m6liCAZEZW+CnHKoRFt7fYvYuO3YdT+YsK/JX9GjCdqiIQ0112j6PAzlzrhg==", "comment"=>{"commenter"=>"Donald", "content"=>"Great first post"}, "commit"=>"Create Comment", "post_id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "post_id", "content", "commenter") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["post_id", 1], ["content", "Great first post"], ["commenter", "Donald"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts/1/comments
+Completed 302 Found in 24ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/posts/1/comments" for ::1 at 2016-10-12 20:04:10 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"post_id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering comments/index.html.erb within layouts/application
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  Rendered comments/_show_comments.html.erb (4.3ms)
+  Rendered comments/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 65ms (Views: 54.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts/1" for ::1 at 2016-10-12 20:04:12 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.0ms)
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = $1[0m  [["post_id", 1]]
+  Rendered posts/_property_details.html.erb (4.7ms)
+  Rendered posts/show.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 85ms (Views: 75.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/1/comments" for ::1 at 2016-10-12 20:04:15 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"post_id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering comments/index.html.erb within layouts/application
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  Rendered comments/_show_comments.html.erb (5.6ms)
+  Rendered comments/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 113ms (Views: 103.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/posts/1" for ::1 at 2016-10-12 20:04:17 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.2ms)
+  [1m[36mProperty Load (1.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."post_id" = $1[0m  [["post_id", 1]]
+  Rendered posts/_property_details.html.erb (9.2ms)
+  Rendered posts/show.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 98ms (Views: 89.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/posts" for ::1 at 2016-10-12 20:04:19 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.8ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY post_count desc LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered posts/_top_contributor.html.erb (18.9ms)
+  Rendered posts/_all_posts.html.erb (1.5ms)
+  Rendered posts/index.html.erb within layouts/application (36.4ms)
+Completed 200 OK in 87ms (Views: 78.2ms | ActiveRecord: 2.6ms)
+
+
